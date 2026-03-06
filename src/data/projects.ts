@@ -1,5 +1,5 @@
 import erp from "@/assets/projects/erp.png";
-import cicd from "@/assets/projects/cicd.png";
+// import cicd from "@/assets/projects/cicd.png";
 import gis from "@/assets/projects/gis-p-a-p.png";
 import matalas from "@/assets/projects/matalas.png";
 
