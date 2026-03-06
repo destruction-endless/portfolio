@@ -1,5 +1,5 @@
 import erp from "@/assets/projects/erp.png";
-import cicd from "@/assets/projects/cicd.png";
+// import cicd from "@/assets/projects/cicd.png";
 import gis from "@/assets/projects/gis-p-a-p.png";
 import matalas from "@/assets/projects/matalas.png";
 
@@ -14,14 +14,14 @@ export const projects = [
     image: erp,
     featured: true,
   },
-  {
-    slug: "cicd",
-    title: "Automated CI/CD Infrastructure",
-    description:
-      "Automated build and deployment pipelines using Jenkins with staging environments and production orchestration.",
-    tags: ["Jenkins", "Linux", "SSH Deploy"],
-    image: cicd,
-  },
+  // {
+  //   slug: "cicd",
+  //   title: "Automated CI/CD Infrastructure",
+  //   description:
+  //     "Automated build and deployment pipelines using Jenkins with staging environments and production orchestration.",
+  //   tags: ["Jenkins", "Linux", "SSH Deploy"],
+  //   image: cicd,
+  // },
   {
     slug: "matalas",
     title: "Government Property Assessment Data System",
@@ -40,20 +40,20 @@ export const projects = [
     image: matalas,
     featured: true,
   },
-  {
-    slug: "pagasa-website",
-    title: "PAGASA Official Website Development",
-    description:
-      "Front-end development contribution for the official website of the Philippine Atmospheric Geophysical and Astronomical Services Administration (PAGASA). The project focused on responsive design and building UI components capable of delivering public weather information across devices.",
-    tags: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Responsive Design",
-      "Government Website",
-      "Web UI",
-    ],
-  },
+  // {
+  //   slug: "pagasa-website",
+  //   title: "PAGASA Official Website Development",
+  //   description:
+  //     "Front-end development contribution for the official website of the Philippine Atmospheric Geophysical and Astronomical Services Administration (PAGASA). The project focused on responsive design and building UI components capable of delivering public weather information across devices.",
+  //   tags: [
+  //     "HTML",
+  //     "CSS",
+  //     "JavaScript",
+  //     "Responsive Design",
+  //     "Government Website",
+  //     "Web UI",
+  //   ],
+  // },
   {
     slug: "gis-property-digitization-platform",
     title: "Government GIS Property Assessment Platform",
