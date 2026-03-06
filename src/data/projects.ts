@@ -1,5 +1,7 @@
-import erp from "@/assets/projects/erp-system.png";
+import erp from "@/assets/projects/erp.png";
 import cicd from "@/assets/projects/cicd.png";
+import gis from "@/assets/projects/gis-p-a-p.png";
+import matalas from "@/assets/projects/matalas.png";
 
 export const projects = [
   {
@@ -24,7 +26,7 @@ export const projects = [
     slug: "matalas",
     title: "Government Property Assessment Data System",
     description:
-      "Large-scale data management system developed for the Department of Assessment – City of Manila. The system manages property assessment records, valuation data, and digitized supporting documents. It centralizes records previously distributed across multiple systems and physical files, enabling faster retrieval, indexing, and reporting.",
+      "Large-scale data management system developed for the Department of Assessment – LGU. The system manages property assessment records, valuation data, and digitized supporting documents. It centralizes records previously distributed across multiple systems and physical files, enabling faster retrieval, indexing, and reporting.",
     tags: [
       "Laravel",
       "Vue.js",
@@ -35,6 +37,7 @@ export const projects = [
       "Government System",
     ],
     link: "/case-study/matalas",
+    image: matalas,
     featured: true,
   },
   {
@@ -55,9 +58,10 @@ export const projects = [
     slug: "gis-property-digitization-platform",
     title: "Government GIS Property Assessment Platform",
     description:
-      "Large-scale government platform used by the City of Manila Department of Assessment to digitize, manage, and visualize real property records with GIS mapping and NAS document storage.",
+      "Large-scale government platform used by the LGU, Department of Assessment to digitize, manage, and visualize real property records with GIS mapping and NAS document storage.",
     tags: ["Laravel", "Vue", "MySQL", "Redis", "GIS", "NAS Storage"],
     link: "/case-study/gis",
+    image: gis,
     featured: true,
   },
 ];

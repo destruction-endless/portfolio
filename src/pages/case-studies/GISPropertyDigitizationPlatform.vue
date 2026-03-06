@@ -165,7 +165,7 @@
           <p
             class="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed"
           >
-            Digitizing and Mapping Real Property Records for the City of Manila
+            Digitizing and Mapping Real Property Records for the LGU
           </p>
         </div>
 

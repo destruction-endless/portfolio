@@ -2,6 +2,7 @@
   import { ref } from "vue";
   import { useRoute } from "vue-router";
   import { useTheme } from "../composables/useTheme";
+  import Footer from "@/components/Footer.vue";
 
   const { theme, toggleTheme } = useTheme();
   const route = useRoute();
@@ -215,5 +216,7 @@
     >
       <slot />
     </main>
+
+    <Footer />
   </div>
 </template>

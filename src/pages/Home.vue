@@ -37,7 +37,7 @@
 <template>
   <MainLayout>
     <section class="space-y-6 sm:space-y-8">
-      <div class="space-y-6 max-w-4xl">
+      <div class="space-y-5 sm:space-y-6 max-w-4xl">
         <h1
           class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
         >
@@ -49,12 +49,14 @@
         </h1>
 
         <p
-          class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed"
+          class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-[1.55]"
         >
           Full-Stack Systems Engineer specializing in Laravel, multi-database
           architectures, spatial data systems, and enterprise-grade deployments.
           I build scalable government and enterprise systems using Laravel,
-          PostgreSQL, MySQL, and modern data pipelines. My work focuses on
+          PostgreSQL, MySQL, and modern data pipelines, enhanced with
+          AI-assisted development workflows and automation tools to accelerate
+          delivery and improve system reliability. My work focuses on
           automation, geospatial data analysis, and high-reliability information
           systems.
         </p>
@@ -181,143 +183,241 @@
         </p>
       </div>
 
-      <div class="space-y-12">
-        <!-- ERP System -->
-        <RouterLink
-          to="/projects?project=erp"
-          class="group block relative border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 md:p-10 transition duration-300 hover:border-zinc-400 dark:hover:border-zinc-600 hover:-translate-y-1 cursor-pointer hover:shadow-xl hover:shadow-white/5"
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        <article
+          class="group border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-7 bg-white dark:bg-zinc-900 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
         >
-          <!-- Subtle background glow on hover -->
-          <div
-            class="absolute inset-0 rounded-2xl bg-white/5 opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none"
-          ></div>
+          <h3 class="text-xl font-semibold tracking-tight">
+            ERP & Agricultural Business Management System
+          </h3>
 
-          <div
-            class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10"
-          >
-            <!-- LEFT SIDE -->
-            <div class="space-y-6">
-              <div>
-                <h3 class="text-2xl font-semibold tracking-tight">
-                  ERP & Agricultural Business Management System
-                </h3>
+          <p class="text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
+            Production-ready ERP platform for integrated sales, inventory,
+            invoicing, audit trails, and role-based enterprise workflows.
+          </p>
 
-                <div
-                  class="text-xs text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300 transition pt-2"
-                >
-                  View Detailed Architecture →
-                </div>
-              </div>
-
-              <p
-                class="text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl"
-              >
-                Designed and implemented a production-ready ERP system handling
-                sales workflows, inventory control, invoicing, audit trails, and
-                role-based access control.
-              </p>
-
-              <div
-                class="flex flex-wrap gap-3 text-xs text-zinc-600 dark:text-zinc-400 pt-2"
-              >
-                <span
-                  class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
-                  >Laravel</span
-                >
-                <span
-                  class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
-                  >Vue 3</span
-                >
-                <span
-                  class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
-                  >PostgreSQL</span
-                >
-                <span
-                  class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
-                  >Multi-DB</span
-                >
-                <span
-                  class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
-                  >CI/CD</span
-                >
-              </div>
-            </div>
-
-            <!-- RIGHT SIDE -->
-            <div class="space-y-8">
-              <div
-                class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-sm"
-              >
-                <div>
-                  <div class="font-semibold text-zinc-900 dark:text-white">
-                    Multi-Department ERP Platform
-                  </div>
-                  <div class="text-zinc-600 dark:text-zinc-400">
-                    Sales, inventory, and financial workflows integrated.
-                  </div>
-                </div>
-                <div>
-                  <div class="font-semibold text-zinc-900 dark:text-white">
-                    Role-Based Access Control
-                  </div>
-                  <div class="text-zinc-600 dark:text-zinc-400">
-                    Secure permissions across teams and operational functions.
-                  </div>
-                </div>
-                <div>
-                  <div class="font-semibold text-zinc-900 dark:text-white">
-                    Multi-Database Architecture
-                  </div>
-                  <div class="text-zinc-600 dark:text-zinc-400">
-                    Separated operational processing and reporting workloads.
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="text-sm text-zinc-600 dark:text-zinc-400 space-y-2 pt-4 border-t border-zinc-200 dark:border-zinc-800"
-              >
-                <div>Architecture-Driven</div>
-                <div>Production Deployment</div>
-                <div>Scalable Design</div>
-              </div>
-            </div>
+          <div class="mt-4">
+            <h4 class="text-sm font-semibold tracking-tight">Capabilities</h4>
+            <ul class="mt-2 space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+              <li>• Multi-Department ERP Platform</li>
+              <li>• Role-Based Access Control</li>
+              <li>• Multi-Database Architecture</li>
+              <li>• Production Deployment</li>
+            </ul>
           </div>
-        </RouterLink>
 
-        <!-- Deployment / CI/CD -->
-        <RouterLink
-          to="/projects?project=cicd"
-          class="group block border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
-        >
-          <div
-            class="flex justify-between items-start flex-col md:flex-row gap-6"
-          >
-            <div class="space-y-4 max-w-2xl">
-              <h3 class="text-2xl font-semibold">
-                Automated CI/CD & Cloud Deployment
-              </h3>
+          <p class="mt-4 text-xs text-zinc-600 dark:text-zinc-400">
+            <span class="font-medium">Stack:</span> Laravel • Vue • PostgreSQL •
+            Multi-DB
+          </p>
 
-              <p class="text-zinc-600 dark:text-zinc-400">
-                Implemented automated deployment pipelines with Jenkins,
-                branch-based workflows, staging environments, and production
-                server orchestration.
-              </p>
-
-              <div class="text-sm text-zinc-600 dark:text-zinc-400">
-                Jenkins · Linux · SSH Deployment · Git Workflows · Server
-                Management
-              </div>
-            </div>
-
-            <div
-              class="text-left md:text-right text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300 transition"
+          <div class="flex flex-wrap gap-2 pt-5 text-xs">
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >Laravel</span
             >
-              <div>DevOps Workflow</div>
-              <div>Production Ready</div>
-              <div>Scalable Infrastructure</div>
-            </div>
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >Vue 3</span
+            >
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >PostgreSQL</span
+            >
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >Multi-DB</span
+            >
           </div>
+
+          <RouterLink
+            to="/case-study/erp"
+            class="inline-flex text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300 transition mt-5"
+          >
+            View Case Study →
+          </RouterLink>
+        </article>
+
+        <article
+          class="group border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-7 bg-white dark:bg-zinc-900 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
+        >
+          <h3 class="text-xl font-semibold tracking-tight">
+            Government GIS Property Assessment Platform
+          </h3>
+
+          <p class="text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
+            Government-grade GIS platform for property record digitization,
+            geospatial mapping workflows, and operational assessment support.
+          </p>
+
+          <div class="mt-4">
+            <h4 class="text-sm font-semibold tracking-tight">Capabilities</h4>
+            <ul class="mt-2 space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+              <li>• GIS Property Mapping Workflows</li>
+              <li>• Digitized Assessment Records</li>
+              <li>• Spatial Data Validation</li>
+              <li>• Government Operations Support</li>
+            </ul>
+          </div>
+
+          <p class="mt-4 text-xs text-zinc-600 dark:text-zinc-400">
+            <span class="font-medium">Stack:</span> Laravel • Vue • MySQL • GIS
+          </p>
+
+          <div class="flex flex-wrap gap-2 pt-5 text-xs">
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >Laravel</span
+            >
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >Vue</span
+            >
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >MySQL</span
+            >
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >GIS</span
+            >
+          </div>
+
+          <RouterLink
+            to="/case-study/gis"
+            class="inline-flex text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300 transition mt-5"
+          >
+            View Case Study →
+          </RouterLink>
+        </article>
+
+        <article
+          class="group border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-7 bg-white dark:bg-zinc-900 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
+        >
+          <h3 class="text-xl font-semibold tracking-tight">
+            MATALAS – Government Property Assessment Data System
+          </h3>
+
+          <p class="text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
+            Centralized property assessment data system designed for accurate
+            records, streamlined validation workflows, and reporting efficiency.
+          </p>
+
+          <div class="mt-4">
+            <h4 class="text-sm font-semibold tracking-tight">Capabilities</h4>
+            <ul class="mt-2 space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+              <li>• Centralized Assessment Repository</li>
+              <li>• Property Record Validation Workflows</li>
+              <li>• Structured Government Data Management</li>
+              <li>• Reporting and Compliance Readiness</li>
+            </ul>
+          </div>
+
+          <p class="mt-4 text-xs text-zinc-600 dark:text-zinc-400">
+            <span class="font-medium">Stack:</span> Laravel • Vue • PostgreSQL •
+            Assessment Data
+          </p>
+
+          <div class="flex flex-wrap gap-2 pt-5 text-xs">
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >Laravel</span
+            >
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >Vue 3</span
+            >
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >PostgreSQL</span
+            >
+            <span
+              class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+              >Assessment Data</span
+            >
+          </div>
+
+          <RouterLink
+            to="/case-study/matalas"
+            class="inline-flex text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300 transition mt-5"
+          >
+            View Case Study →
+          </RouterLink>
+        </article>
+      </div>
+    </section>
+
+    <section
+      class="pt-16 sm:pt-24 lg:pt-40 space-y-8 sm:space-y-10 border-t border-zinc-200 dark:border-zinc-800"
+    >
+      <div class="space-y-4 max-w-4xl">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+          Consulting & Collaboration
+        </h2>
+
+        <p
+          class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-relaxed max-w-3xl"
+        >
+          King Zeus Biong collaborates with government agencies, organizations,
+          and engineering teams to design scalable enterprise systems, GIS
+          platforms, and data infrastructure built for long-term operations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+        <article
+          class="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 bg-white dark:bg-zinc-900 shadow-sm"
+        >
+          <h3 class="text-xl font-semibold tracking-tight">
+            Government Systems
+          </h3>
+          <p class="text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
+            Digital transformation, workflow automation, and enterprise
+            platforms for public sector operations.
+          </p>
+        </article>
+
+        <article
+          class="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 bg-white dark:bg-zinc-900 shadow-sm"
+        >
+          <h3 class="text-xl font-semibold tracking-tight">
+            Enterprise Architecture
+          </h3>
+          <p class="text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
+            Design of scalable Laravel applications and multi-database
+            architectures.
+          </p>
+        </article>
+
+        <article
+          class="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 bg-white dark:bg-zinc-900 shadow-sm"
+        >
+          <h3 class="text-xl font-semibold tracking-tight">
+            GIS & Spatial Systems
+          </h3>
+          <p class="text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
+            Development of property assessment systems, spatial data platforms,
+            and mapping tools.
+          </p>
+        </article>
+
+        <article
+          class="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 bg-white dark:bg-zinc-900 shadow-sm"
+        >
+          <h3 class="text-xl font-semibold tracking-tight">Data Engineering</h3>
+          <p class="text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
+            ETL pipelines, data warehouses, analytics dashboards, and data
+            automation.
+          </p>
+        </article>
+      </div>
+
+      <div class="pt-2">
+        <RouterLink
+          to="/contact"
+          class="inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-black px-5 py-3 rounded-md font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition duration-200"
+        >
+          Discuss a Project
         </RouterLink>
       </div>
     </section>
