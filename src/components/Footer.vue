@@ -20,7 +20,7 @@
 
         <div class="flex items-center gap-3">
           <a
-            href="https://github.com/kingzeusbiong"
+            href="https://github.com/destruction-endless"
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
@@ -30,7 +30,7 @@
           </a>
 
           <a
-            href="https://linkedin.com/in/kingzeusbiong"
+            href="https://linkedin.com/in/kzbiong"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"

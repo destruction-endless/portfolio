@@ -275,7 +275,7 @@
       </a>
 
       <a
-        href="https://github.com/kingzeusbiong"
+        href="https://github.com/destruction-endless"
         target="_blank"
         rel="noreferrer"
         class="group border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 sm:p-7 hover:border-zinc-400 dark:hover:border-zinc-600 transition hover:-translate-y-1"
@@ -289,12 +289,12 @@
         <div
           class="text-sm text-zinc-600 dark:text-zinc-400 mt-4 group-hover:text-zinc-900 dark:group-hover:text-zinc-300"
         >
-          github.com/kingzeusbiong →
+          github.com/destruction-endless →
         </div>
       </a>
 
       <a
-        href="https://linkedin.com/in/kingzeusbiong"
+        href="https://linkedin.com/in/kzbiong"
         target="_blank"
         rel="noreferrer"
         class="group border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 sm:p-7 hover:border-zinc-400 dark:hover:border-zinc-600 transition hover:-translate-y-1"
@@ -308,7 +308,7 @@
         <div
           class="text-sm text-zinc-600 dark:text-zinc-400 mt-4 group-hover:text-zinc-900 dark:group-hover:text-zinc-300"
         >
-          linkedin.com/in/kingzeusbiong →
+          linkedin.com/in/kzbiong →
         </div>
       </a>
 
