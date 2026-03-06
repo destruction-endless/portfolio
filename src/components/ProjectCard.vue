@@ -1,18 +1,37 @@
 <script setup lang="ts">
-  defineProps<{
+  import { computed } from "vue";
+
+  const toSlug = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+
+  const props = defineProps<{
     title: string;
     description: string;
     tags: string[];
     image?: string;
     link?: string;
     featured?: boolean;
+    projectSlug?: string;
+    navigateToProjects?: boolean;
   }>();
+
+  const resolvedLink = computed(() => {
+    if (props.navigateToProjects) {
+      const slug = props.projectSlug ?? toSlug(props.title);
+      return `/projects?project=${slug}`;
+    }
+
+    return props.link;
+  });
 </script>
 
 <template>
   <component
-    :is="link ? 'RouterLink' : 'div'"
-    :to="link"
+    :is="resolvedLink ? 'RouterLink' : 'div'"
+    :to="resolvedLink"
     class="group relative block border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-2xl hover:shadow-black/40"
   >
     <span
@@ -32,6 +51,7 @@
       <img
         v-if="image"
         :src="image"
+        :alt="`${title} project preview`"
         class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition duration-500"
       />
     </div>
@@ -61,7 +81,7 @@
       </div>
 
       <div
-        v-if="link"
+        v-if="resolvedLink"
         class="text-sm text-zinc-600 dark:text-zinc-400 mt-6 group-hover:text-zinc-900 dark:group-hover:text-zinc-300"
       >
         View Case Study →
