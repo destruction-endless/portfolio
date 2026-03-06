@@ -1,6 +1,37 @@
 <script setup lang="ts">
   import MainLayout from "@/layouts/MainLayout.vue";
   import { RouterLink } from "vue-router";
+  import { useSeo } from "@/composables/useSeo";
+
+  useSeo({
+    title: "King Zeus Biong | Full-Stack Systems Engineer Portfolio",
+    description:
+      "Portfolio of King Zeus Biong featuring production-ready ERP, GIS, and data engineering systems built with Laravel, Vue, and scalable architecture patterns.",
+    keywords: [
+      "King Zeus Biong",
+      "Full-Stack Systems Engineer",
+      "Laravel",
+      "Vue",
+      "GIS",
+      "ERP",
+      "Data Engineering",
+      "Portfolio",
+    ],
+    image: "/logo-name.png",
+    canonicalPath: "/",
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "King Zeus Biong",
+      jobTitle: "Information Technology Officer",
+      url: "https://yourdomain.com",
+      sameAs: [
+        "https://github.com/destruction-endless",
+        "https://linkedin.com/in/kzbiong",
+      ],
+      knowsAbout: ["Laravel", "Vue", "GIS", "ERP", "Data Engineering"],
+    },
+  });
 </script>
 
 <template>
@@ -42,7 +73,7 @@
             to="/contact"
             class="border border-zinc-200 dark:border-zinc-800 px-5 py-3 rounded-md font-medium hover:border-zinc-400 dark:hover:border-zinc-600 transition text-center"
           >
-            Hire Me
+            Find Me
           </RouterLink>
         </div>
       </div>
@@ -98,7 +129,7 @@
 
         <div class="pt-6">
           <RouterLink
-            to="/case-studies/gis-property-digitization-platform"
+            to="/case-study/gis"
             class="inline-flex items-center justify-center bg-black text-white dark:bg-white dark:text-black px-5 py-3 rounded-md font-medium hover:bg-zinc-800 dark:hover:bg-zinc-200 transition duration-200"
           >
             View Case Study
@@ -132,7 +163,7 @@
         <p
           class="text-xs text-zinc-600 dark:text-zinc-400 uppercase tracking-[0.2em]"
         >
-          Selected Work
+          Featured Projects
         </p>
 
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
@@ -153,7 +184,7 @@
       <div class="space-y-12">
         <!-- ERP System -->
         <RouterLink
-          to="/case-studies/erp-business-management-system"
+          to="/projects?project=erp"
           class="group block relative border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 md:p-10 transition duration-300 hover:border-zinc-400 dark:hover:border-zinc-600 hover:-translate-y-1 cursor-pointer hover:shadow-xl hover:shadow-white/5"
         >
           <!-- Subtle background glow on hover -->
@@ -218,33 +249,27 @@
                 class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-sm"
               >
                 <div>
-                  <div
-                    class="text-2xl font-semibold text-zinc-900 dark:text-white"
-                  >
-                    10k+
+                  <div class="font-semibold text-zinc-900 dark:text-white">
+                    Multi-Department ERP Platform
                   </div>
                   <div class="text-zinc-600 dark:text-zinc-400">
-                    Transactions / Month
+                    Sales, inventory, and financial workflows integrated.
                   </div>
                 </div>
                 <div>
-                  <div
-                    class="text-2xl font-semibold text-zinc-900 dark:text-white"
-                  >
-                    3
+                  <div class="font-semibold text-zinc-900 dark:text-white">
+                    Role-Based Access Control
                   </div>
                   <div class="text-zinc-600 dark:text-zinc-400">
-                    Database Connections
+                    Secure permissions across teams and operational functions.
                   </div>
                 </div>
                 <div>
-                  <div
-                    class="text-2xl font-semibold text-zinc-900 dark:text-white"
-                  >
-                    24/7
+                  <div class="font-semibold text-zinc-900 dark:text-white">
+                    Multi-Database Architecture
                   </div>
                   <div class="text-zinc-600 dark:text-zinc-400">
-                    Production Runtime
+                    Separated operational processing and reporting workloads.
                   </div>
                 </div>
               </div>
@@ -260,41 +285,10 @@
           </div>
         </RouterLink>
 
-        <!-- Data Warehouse -->
-        <div
-          class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
-        >
-          <div
-            class="flex justify-between items-start flex-col md:flex-row gap-6"
-          >
-            <div class="space-y-4 max-w-2xl">
-              <h3 class="text-2xl font-semibold">
-                Property Assessment Data Warehouse
-              </h3>
-
-              <p class="text-zinc-600 dark:text-zinc-400">
-                Built ETL pipelines integrating multiple transactional databases
-                into a structured data warehouse for analytics and reporting.
-              </p>
-
-              <div class="text-sm text-zinc-600 dark:text-zinc-400">
-                Python ETL · PostgreSQL · MySQL · Data Modeling · Reporting
-              </div>
-            </div>
-
-            <div
-              class="text-left md:text-right text-sm text-zinc-600 dark:text-zinc-400"
-            >
-              <div>Data Engineering</div>
-              <div>Multi-Source Integration</div>
-              <div>Analytics Ready</div>
-            </div>
-          </div>
-        </div>
-
         <!-- Deployment / CI/CD -->
-        <div
-          class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
+        <RouterLink
+          to="/projects?project=cicd"
+          class="group block border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
         >
           <div
             class="flex justify-between items-start flex-col md:flex-row gap-6"
@@ -317,14 +311,14 @@
             </div>
 
             <div
-              class="text-left md:text-right text-sm text-zinc-600 dark:text-zinc-400"
+              class="text-left md:text-right text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300 transition"
             >
               <div>DevOps Workflow</div>
               <div>Production Ready</div>
               <div>Scalable Infrastructure</div>
             </div>
           </div>
-        </div>
+        </RouterLink>
       </div>
     </section>
   </MainLayout>

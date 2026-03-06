@@ -1,5 +1,21 @@
 <script setup lang="ts">
   import MainLayout from "@/layouts/MainLayout.vue";
+  import { useSeo } from "@/composables/useSeo";
+
+  useSeo({
+    title: "About | King Zeus Biong",
+    description:
+      "Professional experience and education of King Zeus Biong across government systems, enterprise platforms, and information technology leadership.",
+    keywords: [
+      "About",
+      "Experience",
+      "Education",
+      "Information Technology Officer",
+      "Portfolio",
+    ],
+    image: "/logo-name.png",
+    canonicalPath: "/about",
+  });
 </script>
 
 <template>

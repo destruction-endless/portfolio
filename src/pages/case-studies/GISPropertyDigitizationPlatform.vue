@@ -1,5 +1,23 @@
 <script setup lang="ts">
   import MainLayout from "@/layouts/MainLayout.vue";
+  import { useSeo } from "@/composables/useSeo";
+
+  useSeo({
+    title: "Government GIS Property Assessment Platform | Case Study",
+    description:
+      "Case study of a GIS-enabled government property assessment platform for digitization, NAS document workflows, and geospatial analysis at city scale.",
+    keywords: [
+      "GIS Case Study",
+      "Government Property Assessment",
+      "Digitization Platform",
+      "Laravel",
+      "Vue",
+      "NAS",
+    ],
+    image: "/logo-name.png",
+    type: "article",
+    canonicalPath: "/case-study/gis",
+  });
 
   const heroTags = ["Laravel", "Vue", "MySQL", "Redis", "GIS", "NAS Storage"];
 

@@ -1,5 +1,23 @@
 <script setup lang="ts">
   import MainLayout from "@/layouts/MainLayout.vue";
+  import { useSeo } from "@/composables/useSeo";
+
+  useSeo({
+    title: "ERP & Agricultural Business Management System | Case Study",
+    description:
+      "Case study of a production ERP platform with multi-database architecture, audit logging, and CI/CD deployment for agricultural business operations.",
+    keywords: [
+      "ERP Case Study",
+      "Agricultural Business System",
+      "Laravel",
+      "Vue 3",
+      "Multi-Database",
+      "CI/CD",
+    ],
+    image: "/logo-name.png",
+    type: "article",
+    canonicalPath: "/case-study/erp",
+  });
 </script>
 
 <template>

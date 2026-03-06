@@ -1,13 +1,38 @@
 <script setup lang="ts">
   import MainLayout from "@/layouts/MainLayout.vue";
+  import { useSeo } from "@/composables/useSeo";
+
+  useSeo({
+    title: "Case Studies | King Zeus Biong",
+    description:
+      "Technical case studies covering ERP, GIS, and government data platforms with architecture decisions, workflows, and measurable outcomes.",
+    keywords: [
+      "Case Studies",
+      "ERP Case Study",
+      "GIS Case Study",
+      "Government Systems",
+      "Laravel",
+      "Vue",
+    ],
+    image: "/logo-name.png",
+    canonicalPath: "/case-studies",
+  });
 
   const caseStudies = [
+    {
+      title: "MATALAS – Government Property Assessment Data System",
+      description:
+        "A large-scale property tax assessment platform used by the City Assessor's Office of Manila. The system integrates legacy databases, GIS mapping, and a massive NAS document archive.",
+      tags: ["Laravel", "Vue", "PostgreSQL", "MySQL", "GIS", "Data Systems"],
+      link: "/case-study/matalas",
+      featured: true,
+    },
     {
       title: "ERP & Agricultural Business Management System",
       description:
         "Production ERP platform for inventory, invoicing, workflow orchestration, and multi-database business operations.",
       tags: ["Laravel", "Vue 3", "PostgreSQL", "MySQL"],
-      link: "/case-studies/erp-business-management-system",
+      link: "/case-study/erp",
       featured: false,
     },
     {
@@ -15,7 +40,7 @@
       description:
         "Large-scale government platform for digitization, GIS parcel mapping, and NAS-backed property document retrieval.",
       tags: ["Laravel", "Vue", "MySQL", "Redis", "GIS", "NAS Storage"],
-      link: "/case-studies/gis-property-digitization-platform",
+      link: "/case-study/gis",
       featured: true,
     },
   ];

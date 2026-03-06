@@ -1,9 +1,51 @@
 <script setup lang="ts">
   import { ref } from "vue";
+  import { useRoute } from "vue-router";
   import { useTheme } from "../composables/useTheme";
 
   const { theme, toggleTheme } = useTheme();
+  const route = useRoute();
   const menuOpen = ref(false);
+
+  const inactiveLinkClass =
+    "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white";
+
+  const activeLinkClass =
+    "text-zinc-900 dark:text-white font-medium underline underline-offset-8 decoration-zinc-400 dark:decoration-zinc-500";
+
+  const isNavActive = (
+    section:
+      | "home"
+      | "about"
+      | "projects"
+      | "case-studies"
+      | "blog"
+      | "contact",
+  ) => {
+    const path = route.path;
+
+    if (section === "home") {
+      return path === "/";
+    }
+
+    if (section === "case-studies") {
+      return path.startsWith("/case-studies") || path.startsWith("/case-study");
+    }
+
+    return path.startsWith(`/${section}`);
+  };
+
+  const getNavLinkClass = (
+    section:
+      | "home"
+      | "about"
+      | "projects"
+      | "case-studies"
+      | "blog"
+      | "contact",
+    extraClasses = "",
+  ) =>
+    `${isNavActive(section) ? activeLinkClass : inactiveLinkClass} ${extraClasses}`;
 
   const closeMenu = () => {
     menuOpen.value = false;
@@ -24,7 +66,9 @@
     ></div>
 
     <!-- Real Content -->
-    <nav class="border-b border-zinc-200 dark:border-zinc-800 relative z-10">
+    <nav
+      class="sticky top-0 z-50 border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-black/90 backdrop-blur supports-[backdrop-filter]:bg-white/80 supports-[backdrop-filter]:dark:bg-black/80"
+    >
       <div
         class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-4 flex justify-between items-center gap-4"
       >
@@ -33,34 +77,47 @@
         <div class="hidden md:flex md:items-center md:space-x-6 text-sm">
           <RouterLink
             to="/"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+            :class="getNavLinkClass('home')"
+            :aria-current="isNavActive('home') ? 'page' : undefined"
             @click="closeMenu"
             >Home</RouterLink
           >
           <RouterLink
             to="/about"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+            :class="getNavLinkClass('about')"
+            :aria-current="isNavActive('about') ? 'page' : undefined"
             @click="closeMenu"
           >
             About
           </RouterLink>
           <RouterLink
             to="/projects"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+            :class="getNavLinkClass('projects')"
+            :aria-current="isNavActive('projects') ? 'page' : undefined"
             @click="closeMenu"
           >
             Projects
           </RouterLink>
           <RouterLink
             to="/case-studies"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+            :class="getNavLinkClass('case-studies')"
+            :aria-current="isNavActive('case-studies') ? 'page' : undefined"
             @click="closeMenu"
           >
             Case Study
           </RouterLink>
           <RouterLink
+            to="/blog"
+            :class="getNavLinkClass('blog')"
+            :aria-current="isNavActive('blog') ? 'page' : undefined"
+            @click="closeMenu"
+          >
+            Blog
+          </RouterLink>
+          <RouterLink
             to="/contact"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+            :class="getNavLinkClass('contact')"
+            :aria-current="isNavActive('contact') ? 'page' : undefined"
             @click="closeMenu"
           >
             Contact
@@ -103,35 +160,48 @@
         <div class="flex flex-col gap-1 pt-3 text-sm">
           <RouterLink
             to="/"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white py-3"
+            :class="getNavLinkClass('home', 'py-3')"
+            :aria-current="isNavActive('home') ? 'page' : undefined"
             @click="closeMenu"
           >
             Home
           </RouterLink>
           <RouterLink
             to="/about"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white py-3"
+            :class="getNavLinkClass('about', 'py-3')"
+            :aria-current="isNavActive('about') ? 'page' : undefined"
             @click="closeMenu"
           >
             About
           </RouterLink>
           <RouterLink
             to="/projects"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white py-3"
+            :class="getNavLinkClass('projects', 'py-3')"
+            :aria-current="isNavActive('projects') ? 'page' : undefined"
             @click="closeMenu"
           >
             Projects
           </RouterLink>
           <RouterLink
             to="/case-studies"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white py-3"
+            :class="getNavLinkClass('case-studies', 'py-3')"
+            :aria-current="isNavActive('case-studies') ? 'page' : undefined"
             @click="closeMenu"
           >
             Case Study
           </RouterLink>
           <RouterLink
+            to="/blog"
+            :class="getNavLinkClass('blog', 'py-3')"
+            :aria-current="isNavActive('blog') ? 'page' : undefined"
+            @click="closeMenu"
+          >
+            Blog
+          </RouterLink>
+          <RouterLink
             to="/contact"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white py-3"
+            :class="getNavLinkClass('contact', 'py-3')"
+            :aria-current="isNavActive('contact') ? 'page' : undefined"
             @click="closeMenu"
           >
             Contact
