@@ -64,7 +64,7 @@
                 Information Technology Officer
               </h3>
               <p class="text-zinc-600 dark:text-zinc-400">
-                Department of Assessment – City of Manila
+                Department of Assessment – LGU
               </p>
               <p class="text-zinc-600 dark:text-zinc-400">
                 Builds and maintains government information systems, web

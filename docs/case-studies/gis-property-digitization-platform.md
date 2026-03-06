@@ -1,10 +1,10 @@
 # Government GIS Property Assessment Platform
 
-### Digitizing and Mapping Real Property Records for the City of Manila
+### Digitizing and Mapping Real Property Records for the Department of Assessment, Local Government Unit
 
 ## 1. Project Overview
 
-The Government GIS Property Assessment Platform is a Laravel-based government information system built for the Department of Assessment, City of Manila. It was designed to modernize property assessment operations by digitizing legacy records, centralizing valuation data, and enabling map-based property analysis.
+The Government GIS Property Assessment Platform is a Laravel-based government information system built for the Department of Assessment, Local Government. It was designed to modernize property assessment operations by digitizing legacy records, centralizing valuation data, and enabling map-based property analysis.
 
 The platform addresses a high-volume public-sector workflow spanning multiple districts and barangays, where records were historically fragmented across paper archives, siloed systems, and disconnected document repositories. By combining transaction processing, document digitization, and GIS visualization, the system provides a single operational layer for assessment, verification, and reporting.
 

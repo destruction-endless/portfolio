@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import MainLayout from "@/layouts/MainLayout.vue";
-  import BlogAccordion from "@/components/blog/BlogAccordion.vue";
+  import BlogCard from "@/components/blog/BlogCard.vue";
   import { blogPosts } from "@/blog";
   import { useSeo } from "@/composables/useSeo";
 
@@ -22,7 +22,7 @@
 
 <template>
   <MainLayout>
-    <section class="max-w-4xl mx-auto space-y-4 sm:space-y-6">
+    <section class="max-w-6xl mx-auto space-y-4 sm:space-y-6">
       <p
         class="text-xs text-zinc-600 dark:text-zinc-400 uppercase tracking-[0.2em]"
       >
@@ -34,7 +34,7 @@
       </h1>
 
       <p
-        class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-2xl leading-relaxed"
+        class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-3xl leading-relaxed"
       >
         Thoughts on modern development, AI-assisted coding, and building real
         systems.
@@ -42,9 +42,9 @@
     </section>
 
     <section
-      class="pt-12 sm:pt-16 lg:pt-20 max-w-4xl mx-auto px-4 sm:px-0 space-y-4"
+      class="pt-12 sm:pt-16 lg:pt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
     >
-      <BlogAccordion :posts="blogPosts" />
+      <BlogCard v-for="post in blogPosts" :key="post.id" :post="post" />
     </section>
   </MainLayout>
 </template>

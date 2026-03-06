@@ -33,7 +33,7 @@
         "Production ERP platform for inventory, invoicing, workflow orchestration, and multi-database business operations.",
       tags: ["Laravel", "Vue 3", "PostgreSQL", "MySQL"],
       link: "/case-study/erp",
-      featured: false,
+      featured: true,
     },
     {
       title: "Government GIS Property Assessment Platform",
