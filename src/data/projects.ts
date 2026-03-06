@@ -8,7 +8,7 @@ export const projects = [
     description:
       "Full ERP platform managing inventory, sales workflows, invoicing, and audit trails across multiple departments.",
     tags: ["Laravel", "Vue 3", "PostgreSQL", "Multi-DB"],
-    link: "/case-study",
+    link: "/case-studies/erp-business-management-system",
     image: erp,
   },
   {
@@ -40,12 +40,6 @@ export const projects = [
     ],
   },
   {
-    title: "GIS Land Valuation Mapping System",
-    description:
-      "A geospatial platform designed to analyze and visualize land valuation data using spatial databases and GIS tools. The system enables geographic analysis of property values and supports planning and taxation through spatial queries and interactive mapping.",
-    tags: ["ArcGIS", "QGIS", "PostGIS", "PostgreSQL", "Python", "GIS"],
-  },
-  {
     title: "PAGASA Official Website Development",
     description:
       "Front-end development contribution for the official website of the Philippine Atmospheric Geophysical and Astronomical Services Administration (PAGASA). The project focused on responsive design and building UI components capable of delivering public weather information across devices.",
@@ -57,5 +51,13 @@ export const projects = [
       "Government Website",
       "Web UI",
     ],
+  },
+  {
+    title: "Government GIS Property Assessment Platform",
+    description:
+      "Large-scale government platform used by the City of Manila Department of Assessment to digitize, manage, and visualize real property records with GIS mapping and NAS document storage.",
+    tags: ["Laravel", "Vue", "MySQL", "Redis", "GIS", "NAS Storage"],
+    link: "/case-studies/gis-property-digitization-platform",
+    featured: true,
   },
 ];
