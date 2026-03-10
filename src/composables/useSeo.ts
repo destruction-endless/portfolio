@@ -12,7 +12,7 @@ type SeoOptions = {
   structuredData?: StructuredData | StructuredData[];
 };
 
-const DEFAULT_SITE_URL = "https://yourdomain.com";
+const DEFAULT_SITE_URL = "https://kingzeusbiong.dev";
 const DEFAULT_IMAGE = "/logo-name.png";
 
 const toAbsoluteUrl = (value: string, siteUrl: string) => {
