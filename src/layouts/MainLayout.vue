@@ -3,16 +3,18 @@
   import { useRoute } from "vue-router";
   import { useTheme } from "../composables/useTheme";
   import Footer from "@/components/Footer.vue";
+  import LightningBackground from "@/components/LightningBackground.vue";
+  import { Sun, Moon, Menu, X } from "lucide-vue-next";
 
-  const { theme, toggleTheme } = useTheme();
+  const { isDark, toggleTheme } = useTheme();
   const route = useRoute();
   const menuOpen = ref(false);
 
   const inactiveLinkClass =
-    "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white";
+    "text-[var(--zeus-nav-inactive)] hover:text-[var(--zeus-nav-inactive-hover)] transition-colors duration-200";
 
   const activeLinkClass =
-    "text-zinc-900 dark:text-white font-medium underline underline-offset-8 decoration-zinc-400 dark:decoration-zinc-500";
+    "text-[var(--zeus-nav-active)] font-medium zeus-underline";
 
   const isNavActive = (
     section:
@@ -60,22 +62,23 @@
 </script>
 
 <template>
-  <div
-    class="min-h-screen bg-white text-zinc-900 dark:bg-black dark:text-zinc-100"
-  >
+  <div class="min-h-screen bg-[var(--zeus-bg)] text-[var(--zeus-text)]">
+    <!-- Lightning Background (dark mode only) -->
+    <LightningBackground />
+
     <!-- Background Glow (separate layer) -->
-    <div
-      class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)] pointer-events-none"
-    ></div>
+    <div class="fixed inset-0 zeus-bg-glow pointer-events-none"></div>
 
     <!-- Real Content -->
     <nav
-      class="sticky top-0 z-50 border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-black/90 backdrop-blur supports-[backdrop-filter]:bg-white/80 supports-[backdrop-filter]:dark:bg-black/80"
+      class="sticky top-0 z-50 border-b border-[var(--zeus-nav-border)] bg-[var(--zeus-nav-bg)] backdrop-blur-xl"
     >
       <div
         class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-4 flex justify-between items-center gap-4"
       >
-        <h1 class="font-semibold tracking-wide">King Zeus Biong</h1>
+        <RouterLink to="/" class="group flex items-center gap-2">
+          <h1 class="zeus-brand-title text-base sm:text-lg">King Zeus Biong</h1>
+        </RouterLink>
 
         <div class="hidden md:flex md:items-center md:space-x-6 text-sm">
           <RouterLink
@@ -135,38 +138,39 @@
           </RouterLink>
           <button
             @click="toggleTheme"
-            class="ml-6 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition"
+            class="ml-6 p-2 rounded-lg text-[var(--zeus-nav-inactive)] hover:text-zeus-gold hover:bg-[var(--zeus-surface-hover)] transition-all duration-200"
+            aria-label="Toggle theme"
           >
-            <span v-if="theme === 'dark'">☀️</span>
-            <span v-else>🌙</span>
+            <Sun v-if="isDark" :size="18" />
+            <Moon v-else :size="18" />
           </button>
         </div>
 
-        <div class="md:hidden flex items-center gap-3">
+        <div class="md:hidden flex items-center gap-2">
           <button
             @click="toggleTheme"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition px-2 py-2"
+            class="p-2 rounded-lg text-[var(--zeus-nav-inactive)] hover:text-zeus-gold hover:bg-[var(--zeus-surface-hover)] transition-all duration-200"
             aria-label="Toggle theme"
           >
-            <span v-if="theme === 'dark'">☀️</span>
-            <span v-else>🌙</span>
+            <Sun v-if="isDark" :size="18" />
+            <Moon v-else :size="18" />
           </button>
 
           <button
             @click="toggleMenu"
-            class="text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition px-2 py-2"
+            class="p-2 rounded-lg text-[var(--zeus-nav-inactive)] hover:text-zeus-gold hover:bg-[var(--zeus-surface-hover)] transition-all duration-200"
             :aria-expanded="menuOpen"
             aria-label="Toggle navigation"
           >
-            <span v-if="menuOpen">✕</span>
-            <span v-else>☰</span>
+            <X v-if="menuOpen" :size="20" />
+            <Menu v-else :size="20" />
           </button>
         </div>
       </div>
 
       <div
         v-if="menuOpen"
-        class="md:hidden border-t border-zinc-200 dark:border-zinc-800 px-4 sm:px-6 pb-4"
+        class="md:hidden border-t border-[var(--zeus-border)] px-4 sm:px-6 pb-4 bg-[var(--zeus-nav-bg)]"
       >
         <div class="flex flex-col gap-1 pt-3 text-sm">
           <RouterLink
@@ -230,7 +234,7 @@
     </nav>
 
     <main
-      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20 relative z-10"
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20 relative z-10 min-h-[60vh]"
     >
       <slot />
     </main>

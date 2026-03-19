@@ -15,14 +15,16 @@
   useSeo({
     title: "Projects | King Zeus Biong",
     description:
-      "Explore production-ready engineering projects including ERP systems, CI/CD infrastructure, and government-grade data platforms.",
+      "Browse production projects: Vue and Laravel web applications, GIS systems, and dashboard platforms delivered with AI-assisted workflows for government and business teams.",
     keywords: [
-      "Projects",
-      "ERP",
-      "CI/CD",
+      "Projects Portfolio",
+      "Web Development",
       "Laravel",
       "Vue",
-      "System Architecture",
+      "GIS Systems",
+      "Dashboard Development",
+      "AI-assisted workflow",
+      "Philippines developer",
     ],
     image: "/logo-name.png",
     canonicalPath: "/projects",
@@ -87,9 +89,7 @@
 <template>
   <MainLayout>
     <section class="max-w-4xl space-y-4 sm:space-y-6">
-      <p
-        class="text-xs text-zinc-600 dark:text-zinc-400 uppercase tracking-[0.2em]"
-      >
+      <p class="text-xs text-zeus-gold uppercase tracking-[0.2em] font-medium">
         Projects
       </p>
 
@@ -98,7 +98,7 @@
       </h1>
 
       <p
-        class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-2xl leading-relaxed"
+        class="text-[var(--zeus-text-secondary)] text-base sm:text-lg max-w-2xl leading-relaxed"
       >
         Production-ready systems designed for real operational environments,
         focusing on scalability, maintainability, and architectural clarity.
@@ -116,7 +116,7 @@
         class="scroll-mt-28 rounded-2xl transition"
         :class="
           selectedProjectSlug === getProjectSlug(project)
-            ? 'ring-2 ring-zinc-300 dark:ring-zinc-700'
+            ? 'ring-2 ring-zeus-gold/50'
             : ''
         "
       >

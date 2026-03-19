@@ -9,9 +9,9 @@
 <template>
   <router-link
     :to="`/blog/${post.id}`"
-    class="group block rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 transition duration-300 hover:-translate-y-2 hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-2xl hover:shadow-black/40"
+    class="group block rounded-2xl overflow-hidden border border-[var(--zeus-card-border)] bg-[var(--zeus-card-bg)] transition-all duration-300 hover:-translate-y-2 hover:border-zeus-gold/50 hover:shadow-zeus-xl"
   >
-    <div class="h-40 sm:h-44 md:h-48 bg-zinc-900 overflow-hidden">
+    <div class="h-40 sm:h-44 md:h-48 bg-zeus-navy overflow-hidden">
       <img
         :src="post.coverImage"
         :alt="`${post.title} cover image`"
@@ -19,18 +19,18 @@
       />
     </div>
 
-    <div class="p-6 sm:p-7 space-y-3">
+    <div class="p-6 sm:p-7 space-y-3 bg-[var(--zeus-card-bg)]">
       <h3
-        class="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300"
+        class="text-lg sm:text-xl font-semibold text-[var(--zeus-text)] group-hover:text-zeus-gold transition-colors duration-200"
       >
         {{ post.title }}
       </h3>
 
-      <p class="text-sm text-zinc-600 dark:text-zinc-400">
+      <p class="text-sm text-[var(--zeus-text-muted)]">
         {{ post.readingTime }} • {{ post.date }}
       </p>
 
-      <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
+      <p class="text-sm sm:text-base text-[var(--zeus-text-secondary)]">
         {{ post.preview }}
       </p>
 
@@ -38,7 +38,7 @@
         <span
           v-for="tag in post.tags"
           :key="`${post.id}-${tag}`"
-          class="text-xs px-2.5 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400"
+          class="text-xs px-2.5 py-1 rounded-full border border-[var(--zeus-tag-border)] text-[var(--zeus-tag-text)] bg-[var(--zeus-tag-bg)]"
         >
           {{ tag }}
         </span>

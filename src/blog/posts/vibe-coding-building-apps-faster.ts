@@ -48,19 +48,19 @@ What used to take a full weekend now took an evening. What used to take a week t
 Here are some real projects I built using this workflow:
 
 Photo & Video Events Website
-A full-featured events portfolio with gallery views, booking forms, and responsive layouts. Built in a single focused session. <a href="https://gcreative.ph.kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 hover:underline transition duration-200 font-medium">View Live Demo →</a>
+A full-featured events portfolio with gallery views, booking forms, and responsive layouts. Built in a single focused session. <a href="https://gcreative.ph.kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-zeus-electric hover:text-zeus-electric-light hover:underline transition duration-200 font-medium">View Live Demo →</a>
 
 Find My Home
-A property listing platform with search, filtering, map integration, and responsive design. The frontend was scaffolded and refined rapidly using AI assistance. <a href="https://find-my-home.kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 hover:underline transition duration-200 font-medium">View Live Demo →</a>
+A property listing platform with search, filtering, map integration, and responsive design. The frontend was scaffolded and refined rapidly using AI assistance. <a href="https://find-my-home.kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-zeus-electric hover:text-zeus-electric-light hover:underline transition duration-200 font-medium">View Live Demo →</a>
 
 BRS Accounting Website
-A professional accounting firm website with service breakdowns, contact forms, and clean corporate design. <a href="https://brs-accounting.kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 hover:underline transition duration-200 font-medium">View Live Demo →</a>
+A professional accounting firm website with service breakdowns, contact forms, and clean corporate design. <a href="https://brs-accounting.kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-zeus-electric hover:text-zeus-electric-light hover:underline transition duration-200 font-medium">View Live Demo →</a>
 
 GoldQuest Demo
-An interactive demo application showcasing dynamic UI components and smooth animations. <a href="https://goldquest.kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 hover:underline transition duration-200 font-medium">View Live Demo →</a>
+An interactive demo application showcasing dynamic UI components and smooth animations. <a href="https://goldquest.kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-zeus-electric hover:text-zeus-electric-light hover:underline transition duration-200 font-medium">View Live Demo →</a>
 
 Portfolio Website
-This very website you are reading right now. Built with Vue 3, Tailwind CSS, and deployed on Vercel — with vibe coding powering the rapid iteration. <a href="https://kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-amber-600 dark:text-amber-400 hover:text-amber-500 dark:hover:text-amber-300 hover:underline transition duration-200 font-medium">View Live Demo →</a>
+This very website you are reading right now. Built with Vue 3, Tailwind CSS, and deployed on Vercel — with vibe coding powering the rapid iteration. <a href="https://kingzeusbiong.dev" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-zeus-electric hover:text-zeus-electric-light hover:underline transition duration-200 font-medium">View Live Demo →</a>
 
 ✅ The Pros
 🚀 Speed

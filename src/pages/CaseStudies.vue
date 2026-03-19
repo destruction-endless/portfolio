@@ -5,14 +5,17 @@
   useSeo({
     title: "Case Studies | King Zeus Biong",
     description:
-      "Technical case studies covering ERP, GIS, and government data platforms with architecture decisions, workflows, and measurable outcomes.",
+      "Deep-dive case studies on Vue and Laravel architecture, GIS system implementation, dashboard reporting, and AI-assisted workflows used in live government projects.",
     keywords: [
       "Case Studies",
+      "Web Development",
       "ERP Case Study",
       "GIS Case Study",
       "Government Systems",
       "Laravel",
       "Vue",
+      "AI-assisted workflow",
+      "Philippines developer",
     ],
     image: "/logo-name.png",
     canonicalPath: "/case-studies",
@@ -52,7 +55,7 @@
       <div class="mx-auto max-w-7xl px-6">
         <section class="max-w-4xl space-y-4 sm:space-y-6">
           <p
-            class="text-sm tracking-widest text-zinc-600 dark:text-zinc-400 uppercase"
+            class="text-sm tracking-widest text-zeus-gold uppercase font-medium"
           >
             Case Studies
           </p>
@@ -62,7 +65,7 @@
           </h1>
 
           <p
-            class="text-zinc-600 dark:text-zinc-400 mt-4 max-w-2xl leading-relaxed"
+            class="text-[var(--zeus-text-secondary)] mt-4 max-w-2xl leading-relaxed"
           >
             Detailed technical breakdowns of production systems, architecture
             decisions, and delivery impact.
@@ -76,11 +79,11 @@
             v-for="caseStudy in caseStudies"
             :key="caseStudy.title"
             :to="caseStudy.link"
-            class="group relative block rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm p-6 sm:p-8 transition duration-300 hover:border-zinc-400 dark:hover:border-zinc-600"
+            class="group relative block rounded-2xl border border-[var(--zeus-card-border)] bg-[var(--zeus-card-bg)] shadow-zeus-sm p-6 sm:p-8 transition-all duration-300 hover:border-zeus-gold/50 hover:shadow-zeus-lg"
           >
             <span
               v-if="caseStudy.featured"
-              class="absolute top-4 right-4 text-xs px-2 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 bg-zinc-100/90 dark:bg-zinc-900/90 text-zinc-700 dark:text-zinc-300"
+              class="absolute top-4 right-4 text-xs px-2 py-1 rounded-full border border-zeus-gold/40 bg-zeus-gold/10 text-zeus-gold font-medium"
             >
               Featured
             </span>
@@ -91,25 +94,23 @@
               </h2>
 
               <p
-                class="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed"
+                class="text-sm sm:text-base text-[var(--zeus-text-secondary)] leading-relaxed"
               >
                 {{ caseStudy.description }}
               </p>
 
-              <div
-                class="flex flex-wrap gap-2 sm:gap-3 text-[11px] sm:text-xs text-zinc-600 dark:text-zinc-400"
-              >
+              <div class="flex flex-wrap gap-2 sm:gap-3 text-[11px] sm:text-xs">
                 <span
                   v-for="tag in caseStudy.tags"
                   :key="tag"
-                  class="px-3 py-1 border border-zinc-300 text-zinc-600 dark:border-zinc-700 dark:text-zinc-400 rounded-full"
+                  class="px-3 py-1 border border-[var(--zeus-tag-border)] text-[var(--zeus-tag-text)] bg-[var(--zeus-tag-bg)] rounded-full"
                 >
                   {{ tag }}
                 </span>
               </div>
 
               <div
-                class="text-sm text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-300"
+                class="text-sm text-zeus-electric group-hover:text-zeus-electric-light transition-colors duration-200"
               >
                 Read Case Study →
               </div>

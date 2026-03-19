@@ -3,20 +3,23 @@
   import { useSeo } from "@/composables/useSeo";
 
   useSeo({
-    title: "ERP & Agricultural Business Management System | Case Study",
+    title: "ERP Case Study | King Zeus Biong",
     description:
-      "Case study of a production ERP platform with multi-database architecture, audit logging, and CI/CD deployment for agricultural business operations.",
+      "Case study of a Vue and Laravel ERP platform with multi-database architecture, dashboard reporting, and AI-assisted workflows for agricultural operations.",
     keywords: [
       "ERP Case Study",
+      "Web Development",
       "Agricultural Business System",
       "Laravel",
       "Vue 3",
       "Multi-Database",
-      "CI/CD",
+      "Dashboard Development",
+      "AI-assisted workflow",
+      "Philippines developer",
     ],
     image: "/logo-name.png",
     type: "article",
-    canonicalPath: "/case-study/erp",
+    canonicalPath: "/case-studies/erp-business-management-system",
   });
 </script>
 
@@ -25,7 +28,7 @@
     <article class="pb-16 sm:pb-20 lg:pb-24">
       <section class="space-y-4 sm:space-y-6 max-w-4xl">
         <p
-          class="text-xs text-zinc-600 dark:text-zinc-400 uppercase tracking-[0.2em]"
+          class="text-xs text-zeus-gold uppercase font-medium tracking-[0.2em]"
         >
           Case Study
         </p>
@@ -35,7 +38,7 @@
         </h1>
 
         <p
-          class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-3xl leading-relaxed"
+          class="text-[var(--zeus-text-secondary)] text-base sm:text-lg max-w-3xl leading-relaxed"
         >
           A production-ready ERP platform designed to manage inventory,
           invoicing, sales workflows, audit logging, and multi-database
@@ -46,14 +49,14 @@
       <section class="pt-12 sm:pt-16 lg:pt-24 max-w-3xl space-y-6">
         <h2 class="text-2xl font-semibold">Business Problem</h2>
 
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        <p class="text-[var(--zeus-text-secondary)] leading-relaxed">
           The organization required a centralized system to manage inventory,
           invoicing, and operational workflows across multiple departments.
           Existing processes relied heavily on manual coordination, increasing
           risk of data inconsistency and operational delays.
         </p>
 
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        <p class="text-[var(--zeus-text-secondary)] leading-relaxed">
           The challenge was to design a scalable system capable of handling
           growing transaction volume while maintaining audit traceability and
           data integrity across multiple database connections.
@@ -63,7 +66,7 @@
       <section class="pt-12 sm:pt-16 lg:pt-24 max-w-3xl space-y-6">
         <h2 class="text-2xl font-semibold">Executive Summary</h2>
 
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        <p class="text-[var(--zeus-text-secondary)] leading-relaxed">
           Designed and implemented a scalable ERP system to streamline
           agricultural business operations. The system handles thousands of
           transactions monthly and integrates multiple database connections for
@@ -72,14 +75,14 @@
       </section>
 
       <section
-        class="pt-12 sm:pt-16 lg:pt-24 py-12 sm:py-16 lg:py-24 bg-zinc-100 dark:bg-zinc-900/30 rounded-3xl px-5 sm:px-8 lg:px-10"
+        class="pt-12 sm:pt-16 lg:pt-24 py-12 sm:py-16 lg:py-24 bg-[var(--zeus-bg-secondary)] rounded-3xl px-5 sm:px-8 lg:px-10"
       >
         <h2 class="text-2xl font-semibold">System Architecture</h2>
 
         <div
-          class="border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 lg:p-10 bg-white dark:bg-zinc-900/40"
+          class="border border-[var(--zeus-border)] rounded-2xl p-6 sm:p-8 lg:p-10 bg-[var(--zeus-card-bg)]"
         >
-          <div class="space-y-6 text-sm text-zinc-700 dark:text-zinc-300">
+          <div class="space-y-6 text-sm text-[var(--zeus-text)]">
             <div class="flex items-center justify-between gap-4">
               <span>Vue 3 Frontend</span>
               <span>→</span>
@@ -106,7 +109,7 @@
           </div>
         </div>
 
-        <p class="text-zinc-600 dark:text-zinc-400 max-w-3xl">
+        <p class="text-[var(--zeus-text-secondary)] max-w-3xl">
           The architecture follows a service-oriented pattern with strict
           separation between domain logic and infrastructure concerns. Business
           logic is encapsulated inside action classes to ensure maintainability
@@ -117,14 +120,14 @@
       <section class="pt-12 sm:pt-16 lg:pt-24 max-w-3xl space-y-6">
         <h2 class="text-2xl font-semibold">Database Strategy</h2>
 
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        <p class="text-[var(--zeus-text-secondary)] leading-relaxed">
           The system utilizes multiple database connections to isolate
           transactional data from reporting workloads. This improves reliability
           and enables future data warehousing integration.
         </p>
 
         <ul
-          class="text-zinc-600 dark:text-zinc-400 list-disc list-inside space-y-2"
+          class="text-[var(--zeus-text-secondary)] list-disc list-inside space-y-2"
         >
           <li>Primary PostgreSQL for core transactions</li>
           <li>Secondary MySQL for external integrations</li>
@@ -136,7 +139,7 @@
       <section class="pt-12 sm:pt-16 lg:pt-24 max-w-3xl space-y-6">
         <h2 class="text-2xl font-semibold">Deployment & Infrastructure</h2>
 
-        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        <p class="text-[var(--zeus-text-secondary)] leading-relaxed">
           CI/CD pipelines were implemented using Jenkins with branch-based
           workflows. Staging and production environments were managed using
           SSH-based deployment and server orchestration.
@@ -149,28 +152,28 @@
         >
           <div>
             <div class="text-3xl sm:text-4xl font-bold">10k+</div>
-            <div class="text-zinc-600 dark:text-zinc-400 text-sm mt-2">
+            <div class="text-[var(--zeus-text-secondary)] text-sm mt-2">
               Monthly Transactions
             </div>
           </div>
 
           <div>
             <div class="text-3xl sm:text-4xl font-bold">3</div>
-            <div class="text-zinc-600 dark:text-zinc-400 text-sm mt-2">
+            <div class="text-[var(--zeus-text-secondary)] text-sm mt-2">
               Database Connections
             </div>
           </div>
 
           <div>
             <div class="text-3xl sm:text-4xl font-bold">24/7</div>
-            <div class="text-zinc-600 dark:text-zinc-400 text-sm mt-2">
+            <div class="text-[var(--zeus-text-secondary)] text-sm mt-2">
               System Uptime
             </div>
           </div>
 
           <div>
             <div class="text-3xl sm:text-4xl font-bold">0</div>
-            <div class="text-zinc-600 dark:text-zinc-400 text-sm mt-2">
+            <div class="text-[var(--zeus-text-secondary)] text-sm mt-2">
               Critical Failures
             </div>
           </div>
@@ -183,7 +186,7 @@
         <h2 class="text-2xl font-semibold">Results & Impact</h2>
 
         <ul
-          class="text-zinc-600 dark:text-zinc-400 list-disc list-inside space-y-2"
+          class="text-[var(--zeus-text-secondary)] list-disc list-inside space-y-2"
         >
           <li>10,000+ transactions processed monthly</li>
           <li>Reduced manual workflow overhead</li>
