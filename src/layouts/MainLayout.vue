@@ -21,6 +21,7 @@
       | "projects"
       | "case-studies"
       | "blog"
+      | "vibe-coding"
       | "contact",
   ) => {
     const path = route.path;
@@ -43,6 +44,7 @@
       | "projects"
       | "case-studies"
       | "blog"
+      | "vibe-coding"
       | "contact",
     extraClasses = "",
   ) =>
@@ -114,6 +116,14 @@
             @click="closeMenu"
           >
             Blog
+          </RouterLink>
+          <RouterLink
+            to="/vibe-coding"
+            :class="getNavLinkClass('vibe-coding')"
+            :aria-current="isNavActive('vibe-coding') ? 'page' : undefined"
+            @click="closeMenu"
+          >
+            Vibe Coding
           </RouterLink>
           <RouterLink
             to="/contact"
@@ -198,6 +208,14 @@
             @click="closeMenu"
           >
             Blog
+          </RouterLink>
+          <RouterLink
+            to="/vibe-coding"
+            :class="getNavLinkClass('vibe-coding', 'py-3')"
+            :aria-current="isNavActive('vibe-coding') ? 'page' : undefined"
+            @click="closeMenu"
+          >
+            Vibe Coding
           </RouterLink>
           <RouterLink
             to="/contact"

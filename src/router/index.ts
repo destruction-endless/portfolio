@@ -6,6 +6,7 @@ import About from "@/pages/About.vue";
 import CaseStudies from "@/pages/CaseStudies.vue";
 import Blog from "@/pages/Blog.vue";
 import BlogPost from "@/pages/blog/BlogPost.vue";
+import VibeCoding from "@/pages/VibeCoding.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -23,6 +24,7 @@ const router = createRouter({
     { path: "/case-studies", name: "CaseStudies", component: CaseStudies },
     { path: "/blog", name: "blog", component: Blog },
     { path: "/blog/:slug", name: "blog-post", component: BlogPost },
+    { path: "/vibe-coding", name: "vibe-coding", component: VibeCoding },
     {
       path: "/case-studies/erp-business-management-system",
       alias: "/case-study/erp",

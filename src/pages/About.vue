@@ -1,210 +1,229 @@
 <script setup lang="ts">
+  import { RouterLink } from "vue-router";
   import MainLayout from "@/layouts/MainLayout.vue";
   import { useSeo } from "@/composables/useSeo";
+  import { Globe, LayoutDashboard, Map, Building2, Zap } from "lucide-vue-next";
 
   useSeo({
     title: "About | King Zeus Biong",
     description:
-      "Professional experience and education of King Zeus Biong across government systems, enterprise platforms, and information technology leadership.",
+      "Full-stack developer building real-world applications fast with Vue, Laravel, and AI-assisted workflows.",
     keywords: [
       "About",
-      "Experience",
-      "Education",
-      "Information Technology Officer",
-      "Portfolio",
+      "Full-Stack Developer",
+      "Vue",
+      "Laravel",
+      "Vibe Coding",
+      "AI Development",
     ],
     image: "/logo-name.png",
     canonicalPath: "/about",
   });
+
+  const services = [
+    {
+      icon: Globe,
+      title: "Web Applications",
+      description:
+        "Full-stack web apps built with modern frameworks, optimized for performance and scalability.",
+    },
+    {
+      icon: LayoutDashboard,
+      title: "Dashboards & Internal Tools",
+      description:
+        "Admin panels, reporting dashboards, and internal tools that streamline business operations.",
+    },
+    {
+      icon: Map,
+      title: "GIS / Data Systems",
+      description:
+        "Geospatially enabled platforms for property management, mapping, and data visualization.",
+    },
+    {
+      icon: Building2,
+      title: "Business Websites",
+      description:
+        "Professional websites for businesses, agencies, and organizations with clean modern design.",
+    },
+    {
+      icon: Zap,
+      title: "Rapid Prototyping",
+      description:
+        "From idea to working prototype in record time using AI-assisted development workflows.",
+    },
+  ];
+
+  const techStack = [
+    "Vue 3",
+    "Tailwind CSS",
+    "Laravel",
+    "Vite",
+    "API Integration",
+    "Vercel",
+  ];
 </script>
 
 <template>
   <MainLayout>
-    <section class="space-y-6 max-w-4xl">
+    <!-- HERO -->
+    <section class="max-w-4xl space-y-4 sm:space-y-6">
       <p
         class="text-xs text-zinc-600 dark:text-zinc-400 uppercase tracking-[0.2em]"
       >
         About
       </p>
 
-      <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
-        Experience &
-        <span class="text-zinc-600 dark:text-zinc-400">Education</span>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+        Building Real-World Applications,
+        <span class="text-zinc-600 dark:text-zinc-400">Fast</span>
       </h1>
 
-      <p class="text-zinc-600 dark:text-zinc-400 text-lg">
-        Career highlights across government systems, enterprise platforms, and
-        academic progression in information technology.
+      <p
+        class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-2xl leading-relaxed"
+      >
+        Full-stack developer specializing in Vue and Laravel, building
+        production-ready applications for real businesses. I use AI-assisted
+        workflows to move from idea to deployment faster — without cutting
+        corners on quality.
       </p>
     </section>
 
-    <section class="pt-24 space-y-10">
+    <!-- WHAT I DO -->
+    <section class="pt-16 sm:pt-20 lg:pt-24 space-y-8">
       <div class="space-y-4">
         <p
           class="text-xs text-zinc-600 dark:text-zinc-400 uppercase tracking-[0.2em]"
         >
-          Experience
+          Services
         </p>
 
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
-          Work
-          <span class="text-zinc-600 dark:text-zinc-400">Summary</span>
+          What I <span class="text-zinc-600 dark:text-zinc-400">Build</span>
         </h2>
       </div>
 
-      <div class="space-y-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
-          class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
+          v-for="service in services"
+          :key="service.title"
+          class="group border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/10"
         >
-          <div
-            class="flex justify-between items-start flex-col md:flex-row gap-6"
-          >
-            <div class="space-y-2 max-w-3xl">
-              <h3 class="text-2xl font-semibold">
-                Information Technology Officer
-              </h3>
-              <p class="text-zinc-600 dark:text-zinc-400">
-                Department of Assessment – LGU
-              </p>
-              <p class="text-zinc-600 dark:text-zinc-400">
-                Builds and maintains government information systems, web
-                platforms, and geospatially enabled data workflows.
-              </p>
-            </div>
+          <component
+            :is="service.icon"
+            :size="28"
+            class="text-zinc-600 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition duration-300 mb-4"
+          />
 
-            <div class="text-right text-sm text-zinc-600 dark:text-zinc-400">
-              <div>2018 – Present</div>
-            </div>
-          </div>
+          <h3 class="text-lg font-semibold mb-2">
+            {{ service.title }}
+          </h3>
+
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            {{ service.description }}
+          </p>
         </div>
+      </div>
+    </section>
+
+    <!-- HOW I WORK -->
+    <section class="pt-16 sm:pt-20 lg:pt-24 space-y-8">
+      <div class="space-y-4">
+        <p
+          class="text-xs text-zinc-600 dark:text-zinc-400 uppercase tracking-[0.2em]"
+        >
+          Workflow
+        </p>
+
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+          How I <span class="text-zinc-600 dark:text-zinc-400">Work</span>
+        </h2>
+      </div>
+
+      <div
+        class="border border-amber-300/30 dark:border-amber-500/20 bg-amber-50/50 dark:bg-amber-950/20 rounded-2xl p-8 sm:p-10 space-y-4"
+      >
+        <h3 class="text-2xl font-bold">⚡ My Workflow</h3>
+
+        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-2xl">
+          I follow a rapid, AI-assisted development style sometimes called
+          <strong class="text-zinc-900 dark:text-zinc-100">Vibe Coding</strong>
+          — focused on fast prototyping, tight iteration cycles, and shipping
+          real results quickly.
+        </p>
 
         <div
-          class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
+          class="flex flex-wrap gap-4 pt-2 text-sm text-zinc-600 dark:text-zinc-400"
         >
-          <div
-            class="flex justify-between items-start flex-col md:flex-row gap-6"
-          >
-            <div class="space-y-2 max-w-3xl">
-              <h3 class="text-2xl font-semibold">Front-End Developer</h3>
-              <p class="text-zinc-600 dark:text-zinc-400">PAGASA – DOST</p>
-              <p class="text-zinc-600 dark:text-zinc-400">
-                Designed and developed responsive institutional web interfaces
-                and user-centered front-end features.
-              </p>
-            </div>
-
-            <div class="text-right text-sm text-zinc-600 dark:text-zinc-400">
-              <div>2016 – 2018</div>
-            </div>
+          <div class="flex items-center gap-2">
+            <span class="text-amber-500">▸</span> Fast prototyping
           </div>
-        </div>
-
-        <div
-          class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
-        >
-          <div
-            class="flex justify-between items-start flex-col md:flex-row gap-6"
-          >
-            <div class="space-y-2 max-w-3xl">
-              <h3 class="text-2xl font-semibold">Support Coordinator</h3>
-              <p class="text-zinc-600 dark:text-zinc-400">
-                The Knowledge Hub – Dubai, UAE
-              </p>
-              <p class="text-zinc-600 dark:text-zinc-400">
-                Led regional support operations for school management software,
-                learning platforms, and technical deployment programs.
-              </p>
-            </div>
-
-            <div class="text-right text-sm text-zinc-600 dark:text-zinc-400">
-              <div>2013 – 2016</div>
-            </div>
+          <div class="flex items-center gap-2">
+            <span class="text-amber-500">▸</span> AI-assisted development
           </div>
-        </div>
-
-        <div
-          class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
-        >
-          <div
-            class="flex justify-between items-start flex-col md:flex-row gap-6"
-          >
-            <div class="space-y-2 max-w-3xl">
-              <h3 class="text-2xl font-semibold">
-                Information Technology Instructor
-              </h3>
-              <p class="text-zinc-600 dark:text-zinc-400">
-                STI College – Santa Maria
-              </p>
-              <p class="text-zinc-600 dark:text-zinc-400">
-                Delivered programming and IT systems instruction, supporting
-                practical software and technology learning.
-              </p>
-            </div>
-
-            <div class="text-right text-sm text-zinc-600 dark:text-zinc-400">
-              <div>2010 – 2013</div>
-            </div>
+          <div class="flex items-center gap-2">
+            <span class="text-amber-500">▸</span> Iteration over planning
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-amber-500">▸</span> Ship fast, refine continuously
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pt-24 pb-20 space-y-10">
+    <!-- TECH STACK -->
+    <section class="pt-16 sm:pt-20 lg:pt-24 space-y-8">
       <div class="space-y-4">
         <p
           class="text-xs text-zinc-600 dark:text-zinc-400 uppercase tracking-[0.2em]"
         >
-          Education
+          Stack
         </p>
 
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
-          Academic
-          <span class="text-zinc-600 dark:text-zinc-400">Credentials</span>
+          Tech
+          <span class="text-zinc-600 dark:text-zinc-400">Stack</span>
         </h2>
       </div>
 
-      <div class="space-y-6">
-        <div
-          class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
+      <div class="flex flex-wrap gap-3">
+        <span
+          v-for="tech in techStack"
+          :key="tech"
+          class="px-4 py-2 rounded-full text-sm border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500 transition"
         >
-          <div
-            class="flex justify-between items-start flex-col md:flex-row gap-6"
-          >
-            <div class="space-y-2 max-w-3xl">
-              <h3 class="text-2xl font-semibold">
-                Master in Information Technology
-              </h3>
-              <p class="text-zinc-600 dark:text-zinc-400">
-                Technological University of the Philippines
-              </p>
-            </div>
+          {{ tech }}
+        </span>
+      </div>
+    </section>
 
-            <div class="text-right text-sm text-zinc-600 dark:text-zinc-400">
-              <div>2022 – Present</div>
-            </div>
-          </div>
-        </div>
+    <!-- CTA -->
+    <section class="pt-16 sm:pt-20 lg:pt-24 pb-8 space-y-6">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+        Let's Build
+        <span class="text-zinc-600 dark:text-zinc-400">Something</span>
+      </h2>
 
-        <div
-          class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 hover:border-zinc-400 dark:hover:border-zinc-600 transition"
+      <p
+        class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-xl leading-relaxed"
+      >
+        Check out what I've built with Vibe Coding, or get in touch to start a
+        project.
+      </p>
+
+      <div class="flex flex-wrap gap-4 pt-2">
+        <RouterLink
+          to="/vibe-coding"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium bg-amber-500 text-white hover:bg-amber-600 transition duration-200"
         >
-          <div
-            class="flex justify-between items-start flex-col md:flex-row gap-6"
-          >
-            <div class="space-y-2 max-w-3xl">
-              <h3 class="text-2xl font-semibold">
-                Bachelor of Science in Computer Science
-              </h3>
-              <p class="text-zinc-600 dark:text-zinc-400">
-                System Technology Institute
-              </p>
-            </div>
+          View Vibe Coding Projects ⚡
+        </RouterLink>
 
-            <div class="text-right text-sm text-zinc-600 dark:text-zinc-400">
-              <div>2006 – 2009</div>
-            </div>
-          </div>
-        </div>
+        <RouterLink
+          to="/contact"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition duration-200"
+        >
+          Contact Me
+        </RouterLink>
       </div>
     </section>
   </MainLayout>
