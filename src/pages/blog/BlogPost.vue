@@ -45,7 +45,7 @@
       if (!trimmed) continue;
 
       const lines = trimmed.split("\n");
-      const firstLine = lines[0].trim();
+      const firstLine = lines[0]?.trim() || "";
       const restLines = lines
         .slice(1)
         .map((l) => l.trim())
