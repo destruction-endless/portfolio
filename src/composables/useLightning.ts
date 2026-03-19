@@ -52,8 +52,10 @@ export function useLightning() {
   });
 
   onUnmounted(() => {
-    // Only clean up if this is the last consumer — but since it's global,
-    // we leave the loop running for the app lifetime.
+    if (timeout) {
+      clearTimeout(timeout);
+      timeout = null;
+    }
   });
 
   return { lightningActive };

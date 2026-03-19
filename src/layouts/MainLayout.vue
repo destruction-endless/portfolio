@@ -6,7 +6,7 @@
   import LightningBackground from "@/components/LightningBackground.vue";
   import { Sun, Moon, Menu, X } from "lucide-vue-next";
 
-  const { theme, isDark, toggleTheme } = useTheme();
+  const { isDark, toggleTheme } = useTheme();
   const route = useRoute();
   const menuOpen = ref(false);
 
