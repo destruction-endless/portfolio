@@ -24,6 +24,88 @@
     canonicalPath: `/blog/${String(route.params.slug ?? "")}`,
     type: "article",
   });
+
+  const isHeading = (text: string): boolean => {
+    if (text.length > 100) return false;
+    if (/[.,:;)"'!]$/.test(text)) return false;
+    if (text.startsWith("•")) return false;
+    if (text.startsWith("<")) return false;
+    if (/^[a-z]/.test(text)) return false;
+    return true;
+  };
+
+  const formattedContent = computed(() => {
+    if (!post.value) return "";
+
+    const blocks = post.value.content.split(/\n\n+/);
+    const html: string[] = [];
+
+    for (const block of blocks) {
+      const trimmed = block.trim();
+      if (!trimmed) continue;
+
+      const lines = trimmed.split("\n");
+      const firstLine = lines[0]?.trim() || "";
+      const restLines = lines
+        .slice(1)
+        .map((l) => l.trim())
+        .filter(Boolean);
+
+      // Bullet list
+      const nonEmpty = lines.filter((l) => l.trim());
+      if (
+        nonEmpty.length > 0 &&
+        nonEmpty.every((l) => l.trim().startsWith("•"))
+      ) {
+        const items = nonEmpty.map(
+          (l) =>
+            `<li class="text-zinc-600 dark:text-zinc-400">${l.trim().slice(1).trim()}</li>`,
+        );
+        html.push(
+          `<ul class="list-disc pl-6 space-y-2 mb-6 text-sm sm:text-base">${items.join("\n")}</ul>`,
+        );
+        continue;
+      }
+
+      // Diagram (contains flow characters)
+      if (/[↓▼│]/.test(trimmed) && lines.length > 2) {
+        html.push(
+          `<div class="font-mono text-sm text-zinc-500 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-900/50 rounded-xl p-4 sm:p-6 my-6 border border-zinc-200 dark:border-zinc-800">${trimmed.replace(/\n/g, "<br>")}</div>`,
+        );
+        continue;
+      }
+
+      // Heading detection on first line
+      if (isHeading(firstLine) && !firstLine.includes("\n")) {
+        if (html.length > 0) {
+          html.push('<hr class="border-zinc-200 dark:border-zinc-700 my-8">');
+        }
+        html.push(
+          `<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4 text-zinc-900 dark:text-zinc-100">${firstLine}</h2>`,
+        );
+
+        if (restLines.length > 0) {
+          html.push(
+            `<p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 text-sm sm:text-base">${restLines.join("<br>")}</p>`,
+          );
+        }
+        continue;
+      }
+
+      // HTML pass-through
+      if (trimmed.startsWith("<")) {
+        html.push(trimmed);
+        continue;
+      }
+
+      // Regular paragraph
+      html.push(
+        `<p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 text-sm sm:text-base">${trimmed.replace(/\n/g, "<br>")}</p>`,
+      );
+    }
+
+    return html.join("\n");
+  });
 </script>
 
 <template>
@@ -63,9 +145,7 @@
           </div>
         </header>
 
-        <div class="prose dark:prose-invert max-w-none whitespace-pre-line">
-          {{ post.content }}
-        </div>
+        <div class="max-w-none" v-html="formattedContent"></div>
       </article>
 
       <div

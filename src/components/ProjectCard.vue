@@ -13,9 +13,12 @@
     tags: string[];
     image?: string;
     link?: string;
+    demoUrl?: string;
     featured?: boolean;
+    isVibe?: boolean;
     projectSlug?: string;
     navigateToProjects?: boolean;
+    linkLabel?: string;
   }>();
 
   const resolvedLink = computed(() => {
@@ -30,9 +33,17 @@
 
 <template>
   <component
-    :is="resolvedLink ? 'RouterLink' : 'div'"
-    :to="resolvedLink"
-    class="group relative block border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-2xl hover:shadow-black/40"
+    :is="demoUrl ? 'a' : resolvedLink ? 'RouterLink' : 'div'"
+    :to="!demoUrl ? resolvedLink : undefined"
+    :href="demoUrl"
+    :target="demoUrl ? '_blank' : undefined"
+    :rel="demoUrl ? 'noreferrer' : undefined"
+    class="group relative block border rounded-2xl overflow-hidden transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/40"
+    :class="
+      isVibe
+        ? 'border-amber-300/40 dark:border-amber-500/20 hover:border-amber-400 dark:hover:border-amber-500/50 hover:shadow-amber-500/10'
+        : 'border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600'
+    "
   >
     <span
       v-if="featured"
@@ -41,9 +52,22 @@
       Featured
     </span>
 
+    <span
+      v-if="isVibe"
+      class="absolute top-3 z-20 px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-medium border border-amber-300 dark:border-amber-600/50 bg-amber-50/90 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300"
+      :class="featured ? 'right-24' : 'right-3'"
+    >
+      ⚡ Vibe Coded
+    </span>
+
     <!-- GLOW LAYER -->
     <div
-      class="absolute inset-0 bg-linear-to-r from-indigo-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"
+      class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"
+      :class="
+        isVibe
+          ? 'bg-linear-to-r from-amber-500/10 via-yellow-500/10 to-orange-500/10'
+          : 'bg-linear-to-r from-indigo-500/10 via-purple-500/10 to-cyan-500/10'
+      "
     ></div>
 
     <!-- IMAGE -->
@@ -81,10 +105,10 @@
       </div>
 
       <div
-        v-if="resolvedLink"
+        v-if="resolvedLink || demoUrl"
         class="text-sm text-zinc-600 dark:text-zinc-400 mt-6 group-hover:text-zinc-900 dark:group-hover:text-zinc-300"
       >
-        View Case Study →
+        {{ linkLabel ?? "View Case Study" }} →
       </div>
     </div>
   </component>
