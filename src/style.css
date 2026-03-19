@@ -1,3 +1,405 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* ═══════════════════════════════════════════════════════════
+   Zeus-Inspired Color System — Light & Dark Themes
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --zeus-font-brand: "Cinzel", Georgia, "Times New Roman", serif;
+  --zeus-font-ui: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Brand Colors */
+  --zeus-gold: #d4af37;
+  --zeus-gold-light: #e8cc6e;
+  --zeus-gold-dark: #b8941e;
+  --zeus-navy: #0b1f3a;
+  --zeus-electric: #3ba3ff;
+  --zeus-electric-light: #6bbbff;
+  --zeus-electric-dark: #1a8ae6;
+  --zeus-charcoal: #0f172a;
+
+  /* Theme Surfaces */
+  --zeus-bg: #f8fafc;
+  --zeus-bg-secondary: #f1f5f9;
+  --zeus-surface: #ffffff;
+  --zeus-surface-hover: #f1f5f9;
+
+  /* Theme Text */
+  --zeus-text: #0f172a;
+  --zeus-text-secondary: #64748b;
+  --zeus-text-muted: #94a3b8;
+
+  /* Theme Borders */
+  --zeus-border: #e2e8f0;
+  --zeus-border-hover: #cbd5e1;
+
+  /* Navbar */
+  --zeus-nav-bg: rgba(248, 250, 252, 0.92);
+  --zeus-nav-border: #e2e8f0;
+
+  /* Card */
+  --zeus-card-bg: #ffffff;
+  --zeus-card-border: #e2e8f0;
+  --zeus-card-border-hover: #d4af37;
+  --zeus-card-shadow: rgba(15, 23, 42, 0.06);
+  --zeus-card-shadow-hover: rgba(212, 175, 55, 0.12);
+
+  /* Buttons */
+  --zeus-btn-primary-bg: #d4af37;
+  --zeus-btn-primary-text: #0f172a;
+  --zeus-btn-primary-hover: #b8941e;
+  --zeus-btn-secondary-bg: transparent;
+  --zeus-btn-secondary-text: #0f172a;
+  --zeus-btn-secondary-border: #e2e8f0;
+  --zeus-btn-secondary-hover-border: #d4af37;
+
+  /* Links */
+  --zeus-link: #3ba3ff;
+  --zeus-link-hover: #1a8ae6;
+
+  /* Tags */
+  --zeus-tag-bg: #f1f5f9;
+  --zeus-tag-text: #64748b;
+  --zeus-tag-border: #e2e8f0;
+
+  /* Active nav */
+  --zeus-nav-active: #d4af37;
+  --zeus-nav-inactive: #64748b;
+  --zeus-nav-inactive-hover: #0f172a;
+
+  /* Glow */
+  --zeus-glow: rgba(59, 163, 255, 0.15);
+  --zeus-glow-gold: rgba(212, 175, 55, 0.15);
+}
+
+html,
+body {
+  font-family: var(--zeus-font-ui);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--zeus-text);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2vw, 1.875rem);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+p,
+li,
+a,
+button,
+label,
+input,
+textarea {
+  font-family: var(--zeus-font-ui);
+}
+
+p {
+  color: var(--zeus-text-secondary);
+  line-height: 1.7;
+}
+
+.zeus-subtext {
+  color: var(--zeus-text-muted);
+  font-size: 0.875rem;
+}
+
+.dark {
+  /* Theme Surfaces */
+  --zeus-bg: #0b1f3a;
+  --zeus-bg-secondary: #0f172a;
+  --zeus-surface: #132c4d;
+  --zeus-surface-hover: #183556;
+
+  /* Theme Text */
+  --zeus-text: #f1f5f9;
+  --zeus-text-secondary: #94a3b8;
+  --zeus-text-muted: #64748b;
+
+  /* Theme Borders */
+  --zeus-border: #1e3a5f;
+  --zeus-border-hover: #2a5080;
+
+  /* Navbar */
+  --zeus-nav-bg: rgba(11, 31, 58, 0.92);
+  --zeus-nav-border: #1e3a5f;
+
+  /* Card */
+  --zeus-card-bg: #132c4d;
+  --zeus-card-border: #1e3a5f;
+  --zeus-card-border-hover: #d4af37;
+  --zeus-card-shadow: rgba(0, 0, 0, 0.3);
+  --zeus-card-shadow-hover: rgba(212, 175, 55, 0.18);
+
+  /* Buttons */
+  --zeus-btn-primary-bg: #d4af37;
+  --zeus-btn-primary-text: #0f172a;
+  --zeus-btn-primary-hover: #e8cc6e;
+  --zeus-btn-secondary-bg: transparent;
+  --zeus-btn-secondary-text: #f1f5f9;
+  --zeus-btn-secondary-border: #1e3a5f;
+  --zeus-btn-secondary-hover-border: #d4af37;
+
+  /* Links */
+  --zeus-link: #3ba3ff;
+  --zeus-link-hover: #6bbbff;
+
+  /* Tags */
+  --zeus-tag-bg: rgba(30, 58, 95, 0.6);
+  --zeus-tag-text: #94a3b8;
+  --zeus-tag-border: #1e3a5f;
+
+  /* Active nav */
+  --zeus-nav-active: #d4af37;
+  --zeus-nav-inactive: #94a3b8;
+  --zeus-nav-inactive-hover: #f1f5f9;
+
+  /* Glow */
+  --zeus-glow: rgba(59, 163, 255, 0.2);
+  --zeus-glow-gold: rgba(212, 175, 55, 0.2);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Tailwind v4 Theme Extension
+   ═══════════════════════════════════════════════════════════ */
+
+@theme {
+  /* Zeus brand colors */
+  --color-zeus-gold: #d4af37;
+  --color-zeus-gold-light: #e8cc6e;
+  --color-zeus-gold-dark: #b8941e;
+  --color-zeus-navy: #0b1f3a;
+  --color-zeus-navy-light: #132c4d;
+  --color-zeus-electric: #3ba3ff;
+  --color-zeus-electric-light: #6bbbff;
+  --color-zeus-electric-dark: #1a8ae6;
+  --color-zeus-charcoal: #0f172a;
+  --color-zeus-slate: #64748b;
+  --color-zeus-surface: #f8fafc;
+
+  /* Shadows */
+  --shadow-zeus-sm:
+    0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-zeus-md:
+    0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-zeus-lg:
+    0 8px 32px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  --shadow-zeus-glow:
+    0 0 20px rgba(59, 163, 255, 0.25), 0 0 40px rgba(59, 163, 255, 0.1);
+  --shadow-zeus-gold:
+    0 0 20px rgba(212, 175, 55, 0.25), 0 0 40px rgba(212, 175, 55, 0.1);
+  --shadow-zeus-xl:
+    0 12px 48px rgba(0, 0, 0, 0.18), 0 0 24px rgba(212, 175, 55, 0.08);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Zeus Utility Classes
+   ═══════════════════════════════════════════════════════════ */
+
+/* Gold gradient text */
+.zeus-text-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #e8cc6e 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Zeus gradient (gold → electric blue) */
+.zeus-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #3ba3ff 100%);
+}
+
+.zeus-gradient-text {
+  background: linear-gradient(135deg, #d4af37 0%, #3ba3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zeus-brand-title {
+  font-family: var(--zeus-font-brand);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #d4af37 0%, #fde68a 45%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Electric blue glow effect */
+.zeus-glow-electric {
+  box-shadow:
+    0 0 15px rgba(59, 163, 255, 0.3),
+    0 0 30px rgba(59, 163, 255, 0.1);
+}
+
+.dark .zeus-glow-electric {
+  box-shadow:
+    0 0 20px rgba(59, 163, 255, 0.4),
+    0 0 40px rgba(59, 163, 255, 0.15);
+}
+
+/* Gold glow effect */
+.zeus-glow-gold {
+  box-shadow:
+    0 0 15px rgba(212, 175, 55, 0.3),
+    0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+.dark .zeus-glow-gold {
+  box-shadow:
+    0 0 20px rgba(212, 175, 55, 0.4),
+    0 0 40px rgba(212, 175, 55, 0.15);
+}
+
+/* Gold underline decoration */
+.zeus-underline {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-color: #d4af37;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Smooth Theme Transition
+   ═══════════════════════════════════════════════════════════ */
+
+html,
+html *,
+html *::before,
+html *::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Disable transition for immediate interactions */
+html a:hover,
+html button:hover,
+html a:active,
+html button:active {
+  transition-duration: 150ms;
+}
+
+/* Background glow for dark mode hero area */
+.zeus-bg-glow {
+  background: radial-gradient(
+    ellipse at top center,
+    rgba(59, 163, 255, 0.06) 0%,
+    rgba(212, 175, 55, 0.03) 40%,
+    transparent 70%
+  );
+}
+
+.dark .zeus-bg-glow {
+  background: radial-gradient(
+    ellipse at top center,
+    rgba(59, 163, 255, 0.1) 0%,
+    rgba(212, 175, 55, 0.05) 40%,
+    transparent 70%
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Zeus Animations
+   ═══════════════════════════════════════════════════════════ */
+
+/* Floating animation for Zeus logo */
+@keyframes zeus-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.zeus-float {
+  animation: zeus-float 5s ease-in-out infinite;
+}
+
+/* Lightning-synced glow pulse on logo */
+.zeus-logo-glow {
+  filter: drop-shadow(0 0 20px rgba(59, 163, 255, 0.15));
+  transition:
+    filter 0.15s ease-out,
+    transform 0.15s ease-out;
+}
+
+.zeus-logo-glow.lightning-active {
+  filter: drop-shadow(0 0 40px rgba(59, 163, 255, 0.5))
+    drop-shadow(0 0 80px rgba(59, 163, 255, 0.25));
+  transform: scale(1.03);
+}
+
+.dark .zeus-logo-glow {
+  filter: drop-shadow(0 0 24px rgba(59, 163, 255, 0.2));
+}
+
+.dark .zeus-logo-glow.lightning-active {
+  filter: drop-shadow(0 0 50px rgba(59, 163, 255, 0.6))
+    drop-shadow(0 0 100px rgba(59, 163, 255, 0.3));
+  transform: scale(1.04);
+}
+
+/* Contact page brand identity styles */
+@keyframes zeus-logo-pulse {
+  0%,
+  100% {
+    opacity: 0.96;
+    filter: drop-shadow(0 0 16px rgba(59, 163, 255, 0.28));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 22px rgba(59, 163, 255, 0.42));
+  }
+}
+
+.zeus-contact-logo {
+  filter: drop-shadow(0 0 20px rgba(59, 163, 255, 0.4));
+  animation: zeus-logo-pulse 4s ease-in-out infinite;
+}
+
+.zeus-epic-title {
+  font-family: var(--zeus-font-brand);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #d4af37 0%, #fde68a 45%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zeus-contact-hero-image {
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+}
+
+@keyframes zeus-float-subtle-keyframes {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.zeus-float-subtle {
+  animation: zeus-float-subtle-keyframes 5s ease-in-out infinite;
+}

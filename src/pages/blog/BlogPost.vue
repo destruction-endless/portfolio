@@ -14,15 +14,35 @@
 
   useSeo({
     title: post.value
-      ? `${post.value.title} | Developer Blog`
-      : "Blog Post | Developer Blog",
+      ? `${post.value.title} | King Zeus Biong`
+      : "Blog Post | King Zeus Biong",
     description: post.value
       ? post.value.preview
-      : "Developer insights and engineering notes.",
-    keywords: post.value?.tags ?? ["Developer Blog", "Engineering"],
+      : "Article on Vue and Laravel development, GIS systems, dashboard engineering, and AI-assisted workflows by King Zeus Biong.",
+    keywords: post.value?.tags ?? [
+      "Developer Blog",
+      "Web Development",
+      "GIS Systems",
+      "AI-assisted workflow",
+      "Philippines developer",
+    ],
     image: post.value?.coverImage ?? "/logo-name.png",
     canonicalPath: `/blog/${String(route.params.slug ?? "")}`,
     type: "article",
+    structuredData: post.value
+      ? {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.value.title,
+          description: post.value.preview,
+          author: {
+            "@type": "Person",
+            name: post.value.author ?? "King Zeus Biong",
+          },
+          datePublished: post.value.date,
+          image: post.value.coverImage,
+        }
+      : undefined,
   });
 
   const isHeading = (text: string): boolean => {
@@ -59,7 +79,7 @@
       ) {
         const items = nonEmpty.map(
           (l) =>
-            `<li class="text-zinc-600 dark:text-zinc-400">${l.trim().slice(1).trim()}</li>`,
+            `<li class="text-[var(--zeus-text-secondary)]">${l.trim().slice(1).trim()}</li>`,
         );
         html.push(
           `<ul class="list-disc pl-6 space-y-2 mb-6 text-sm sm:text-base">${items.join("\n")}</ul>`,
@@ -70,7 +90,7 @@
       // Diagram (contains flow characters)
       if (/[↓▼│]/.test(trimmed) && lines.length > 2) {
         html.push(
-          `<div class="font-mono text-sm text-zinc-500 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-900/50 rounded-xl p-4 sm:p-6 my-6 border border-zinc-200 dark:border-zinc-800">${trimmed.replace(/\n/g, "<br>")}</div>`,
+          `<div class="font-mono text-sm text-[var(--zeus-text-muted)] bg-[var(--zeus-bg-secondary)] rounded-xl p-4 sm:p-6 my-6 border border-[var(--zeus-border)]">${trimmed.replace(/\n/g, "<br>")}</div>`,
         );
         continue;
       }
@@ -78,15 +98,15 @@
       // Heading detection on first line
       if (isHeading(firstLine) && !firstLine.includes("\n")) {
         if (html.length > 0) {
-          html.push('<hr class="border-zinc-200 dark:border-zinc-700 my-8">');
+          html.push('<hr class="border-[var(--zeus-border)] my-8">');
         }
         html.push(
-          `<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4 text-zinc-900 dark:text-zinc-100">${firstLine}</h2>`,
+          `<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4 text-[var(--zeus-text)]">${firstLine}</h2>`,
         );
 
         if (restLines.length > 0) {
           html.push(
-            `<p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 text-sm sm:text-base">${restLines.join("<br>")}</p>`,
+            `<p class="text-[var(--zeus-text-secondary)] leading-relaxed mb-4 text-sm sm:text-base">${restLines.join("<br>")}</p>`,
           );
         }
         continue;
@@ -100,7 +120,7 @@
 
       // Regular paragraph
       html.push(
-        `<p class="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 text-sm sm:text-base">${trimmed.replace(/\n/g, "<br>")}</p>`,
+        `<p class="text-[var(--zeus-text-secondary)] leading-relaxed mb-4 text-sm sm:text-base">${trimmed.replace(/\n/g, "<br>")}</p>`,
       );
     }
 
@@ -113,7 +133,7 @@
     <section class="max-w-3xl mx-auto space-y-6 sm:space-y-8">
       <RouterLink
         to="/blog"
-        class="inline-flex text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200"
+        class="inline-flex text-sm text-zeus-electric hover:text-zeus-electric-light transition-colors duration-200"
       >
         ← Back to Blog
       </RouterLink>
@@ -122,7 +142,7 @@
         <img
           :src="post.coverImage"
           :alt="`${post.title} cover image`"
-          class="w-full h-56 sm:h-72 object-cover rounded-2xl border border-zinc-200 dark:border-zinc-800"
+          class="w-full h-56 sm:h-72 object-cover rounded-2xl border border-[var(--zeus-border)]"
         />
 
         <header class="space-y-3">
@@ -130,7 +150,7 @@
             {{ post.title }}
           </h1>
 
-          <p class="text-sm text-zinc-600 dark:text-zinc-400">
+          <p class="text-sm text-[var(--zeus-text-muted)]">
             {{ post.readingTime }} • {{ post.date }}
           </p>
 
@@ -138,7 +158,7 @@
             <span
               v-for="tag in post.tags"
               :key="`${post.id}-${tag}`"
-              class="text-xs px-2.5 py-1 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400"
+              class="text-xs px-2.5 py-1 rounded-full border border-[var(--zeus-tag-border)] text-[var(--zeus-tag-text)] bg-[var(--zeus-tag-bg)]"
             >
               {{ tag }}
             </span>
@@ -150,7 +170,7 @@
 
       <div
         v-else
-        class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 text-zinc-600 dark:text-zinc-400"
+        class="rounded-xl border border-[var(--zeus-border)] p-6 text-[var(--zeus-text-secondary)]"
       >
         Blog post not found.
       </div>

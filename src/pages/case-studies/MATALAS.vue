@@ -3,16 +3,19 @@
   import { useSeo } from "@/composables/useSeo";
 
   useSeo({
-    title: "MATALAS Government Property Assessment Data System | Case Study",
+    title: "MATALAS Case Study | King Zeus Biong",
     description:
-      "Case study of MATALAS, a large-scale government property assessment data platform integrating GIS mapping, NAS archives, and multi-stage data validation workflows.",
+      "Case study of MATALAS, a Vue and Laravel property assessment platform integrating GIS mapping, dashboard analytics, NAS archives, and AI-assisted validation workflows.",
     keywords: [
-      "MATALAS",
-      "Government Data System",
+      "MATALAS Case Study",
+      "Web Development",
       "Property Assessment",
       "GIS",
       "Laravel",
       "Vue",
+      "Dashboard Development",
+      "AI-assisted workflow",
+      "Philippines developer",
     ],
     image: "/logo-name.png",
     type: "article",
@@ -124,7 +127,7 @@
     <article class="pb-16 sm:pb-20 lg:pb-24">
       <section class="space-y-4 sm:space-y-6 max-w-4xl">
         <p
-          class="text-xs text-zinc-600 dark:text-zinc-400 uppercase tracking-[0.2em]"
+          class="text-xs text-zeus-gold uppercase font-medium tracking-[0.2em]"
         >
           Engineering Case Study
         </p>
@@ -137,7 +140,7 @@
           </h1>
 
           <p
-            class="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed"
+            class="text-base sm:text-lg md:text-xl text-[var(--zeus-text-secondary)] max-w-3xl leading-relaxed"
           >
             A large-scale assessment platform for the City Assessor's Office of
             Manila, integrating records operations, GIS tax mapping, and
@@ -146,7 +149,7 @@
         </div>
 
         <p
-          class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed"
+          class="text-base sm:text-lg text-[var(--zeus-text-secondary)] max-w-3xl leading-relaxed"
         >
           MATALAS centralizes property assessment operations across legacy
           systems and high-volume document archives, delivering a consistent
@@ -157,7 +160,7 @@
           <span
             v-for="tag in heroTags"
             :key="tag"
-            class="px-3 py-1.5 text-xs sm:text-sm border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 rounded-full"
+            class="px-3 py-1.5 text-xs sm:text-sm border border-[var(--zeus-tag-border)] text-[var(--zeus-tag-text)] bg-[var(--zeus-tag-bg)] rounded-full"
           >
             {{ tag }}
           </span>
@@ -173,7 +176,7 @@
             Project Overview
           </h2>
           <p
-            class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-relaxed max-w-3xl"
+            class="text-[var(--zeus-text-secondary)] text-base sm:text-lg leading-relaxed max-w-3xl"
           >
             MATALAS is a government property assessment data platform built to
             support high-volume city operations. It unifies assessment records,
@@ -181,7 +184,7 @@
             operational environment.
           </p>
           <p
-            class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-relaxed max-w-3xl"
+            class="text-[var(--zeus-text-secondary)] text-base sm:text-lg leading-relaxed max-w-3xl"
           >
             The system emphasizes operational reliability, structured data
             validation, and policy-ready reporting so assessment teams can move
@@ -198,7 +201,7 @@
             Problem
           </h2>
           <ul
-            class="space-y-3 text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl list-disc list-inside"
+            class="space-y-3 text-[var(--zeus-text-secondary)] leading-relaxed max-w-3xl list-disc list-inside"
           >
             <li v-for="point in problemPoints" :key="point">{{ point }}</li>
           </ul>
@@ -212,14 +215,14 @@
             Solution
           </h2>
           <p
-            class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-relaxed max-w-3xl"
+            class="text-[var(--zeus-text-secondary)] text-base sm:text-lg leading-relaxed max-w-3xl"
           >
             The project delivered an integrated platform that combines core
             assessment workflows, archive retrieval, geospatial validation, and
             reporting into one system aligned with government process controls.
           </p>
           <ul
-            class="space-y-3 text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl list-disc list-inside"
+            class="space-y-3 text-[var(--zeus-text-secondary)] leading-relaxed max-w-3xl list-disc list-inside"
           >
             <li v-for="item in solutionPoints" :key="item">{{ item }}</li>
           </ul>
@@ -233,14 +236,14 @@
             System Architecture
           </h2>
           <div
-            class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/30 p-5 sm:p-6 shadow-sm"
+            class="rounded-2xl border border-[var(--zeus-border)] bg-[var(--zeus-bg-secondary)] p-5 sm:p-6 shadow-sm"
           >
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
               <div
-                class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-4 sm:p-5"
+                class="rounded-xl border border-[var(--zeus-border)] bg-[var(--zeus-card-bg)] p-4 sm:p-5"
               >
                 <pre
-                  class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 whitespace-pre-wrap leading-relaxed"
+                  class="text-xs sm:text-sm text-[var(--zeus-text)] whitespace-pre-wrap leading-relaxed"
                 >
 Frontend (Vue + Inertia)
 ↓
@@ -253,10 +256,10 @@ NAS Storage (PDF Documents)</pre
               </div>
 
               <div
-                class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-4 sm:p-5"
+                class="rounded-xl border border-[var(--zeus-border)] bg-[var(--zeus-card-bg)] p-4 sm:p-5"
               >
                 <pre
-                  class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 whitespace-pre-wrap leading-relaxed"
+                  class="text-xs sm:text-sm text-[var(--zeus-text)] whitespace-pre-wrap leading-relaxed"
                 >
 Data Consolidation Layer
 ↓
@@ -269,7 +272,7 @@ and Export Pipelines</pre
             </div>
           </div>
           <ul
-            class="space-y-3 text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-4xl list-disc list-inside"
+            class="space-y-3 text-[var(--zeus-text-secondary)] leading-relaxed max-w-4xl list-disc list-inside"
           >
             <li v-for="layer in architectureLayers" :key="layer">
               {{ layer }}
@@ -285,10 +288,10 @@ and Export Pipelines</pre
             File Management System
           </h2>
           <div
-            class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/30 p-5 sm:p-6 shadow-sm"
+            class="rounded-2xl border border-[var(--zeus-border)] bg-[var(--zeus-bg-secondary)] p-5 sm:p-6 shadow-sm"
           >
             <pre
-              class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 whitespace-pre-wrap leading-relaxed"
+              class="text-xs sm:text-sm text-[var(--zeus-text)] whitespace-pre-wrap leading-relaxed"
             >
 Scanner
 ↓
@@ -304,7 +307,7 @@ Encoder linking ARP ↔ TD</pre
             >
           </div>
           <p
-            class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-relaxed max-w-3xl"
+            class="text-[var(--zeus-text-secondary)] text-base sm:text-lg leading-relaxed max-w-3xl"
           >
             MATALAS uses a NAS-centered document process for archival retrieval,
             preview generation, and assessor-side review. The workflow is
@@ -320,10 +323,10 @@ Encoder linking ARP ↔ TD</pre
             GIS Tax Mapping
           </h2>
           <div
-            class="rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/30 p-5 sm:p-6 shadow-sm"
+            class="rounded-2xl border border-[var(--zeus-border)] bg-[var(--zeus-bg-secondary)] p-5 sm:p-6 shadow-sm"
           >
             <pre
-              class="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 whitespace-pre-wrap leading-relaxed"
+              class="text-xs sm:text-sm text-[var(--zeus-text)] whitespace-pre-wrap leading-relaxed"
             >
 Google Maps
 ↓
@@ -337,7 +340,7 @@ Tax declaration data</pre
             >
           </div>
           <p
-            class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-relaxed max-w-3xl"
+            class="text-[var(--zeus-text-secondary)] text-base sm:text-lg leading-relaxed max-w-3xl"
           >
             Tax map visualization links property records to parcel boundaries,
             enabling faster location validation and more context-aware
@@ -354,20 +357,20 @@ Tax declaration data</pre
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
             <article
-              class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-5 sm:p-6 bg-white dark:bg-zinc-900 shadow-sm"
+              class="rounded-xl border border-[var(--zeus-border)] p-5 sm:p-6 bg-[var(--zeus-card-bg)] shadow-sm"
             >
               <div
-                class="h-16 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/40 flex items-end gap-1.5 px-3 py-2"
+                class="h-16 rounded-lg border border-[var(--zeus-border)] bg-[var(--zeus-bg-secondary)] flex items-end gap-1.5 px-3 py-2"
               >
-                <span class="w-2 rounded-sm bg-zinc-400 h-4"></span>
-                <span class="w-2 rounded-sm bg-zinc-400 h-7"></span>
-                <span class="w-2 rounded-sm bg-zinc-400 h-10"></span>
-                <span class="w-2 rounded-sm bg-zinc-400 h-8"></span>
-                <span class="w-2 rounded-sm bg-zinc-400 h-12"></span>
+                <span class="w-2 rounded-sm bg-zeus-gold h-4"></span>
+                <span class="w-2 rounded-sm bg-zeus-gold h-7"></span>
+                <span class="w-2 rounded-sm bg-zeus-gold h-10"></span>
+                <span class="w-2 rounded-sm bg-zeus-gold h-8"></span>
+                <span class="w-2 rounded-sm bg-zeus-gold h-12"></span>
               </div>
               <h3 class="text-lg font-semibold mt-4">Encoder Productivity</h3>
               <p
-                class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 leading-relaxed"
+                class="text-[var(--zeus-text-secondary)] text-sm sm:text-base mt-2 leading-relaxed"
               >
                 Monitors encoder throughput and output consistency across
                 operating teams.
@@ -375,22 +378,22 @@ Tax declaration data</pre
             </article>
 
             <article
-              class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-5 sm:p-6 bg-white dark:bg-zinc-900 shadow-sm"
+              class="rounded-xl border border-[var(--zeus-border)] p-5 sm:p-6 bg-[var(--zeus-card-bg)] shadow-sm"
             >
               <div
-                class="h-16 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/40 flex items-center px-3"
+                class="h-16 rounded-lg border border-[var(--zeus-border)] bg-[var(--zeus-bg-secondary)] flex items-center px-3"
               >
                 <div
-                  class="w-full h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700"
+                  class="w-full h-1.5 rounded-full bg-[var(--zeus-bg-secondary)]"
                 >
-                  <div class="h-1.5 w-2/3 rounded-full bg-zinc-500"></div>
+                  <div class="h-1.5 w-2/3 rounded-full bg-zeus-gold"></div>
                 </div>
               </div>
               <h3 class="text-lg font-semibold mt-4">
                 Daily Encodes vs Target
               </h3>
               <p
-                class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 leading-relaxed"
+                class="text-[var(--zeus-text-secondary)] text-sm sm:text-base mt-2 leading-relaxed"
               >
                 Compares daily encoding volume against operational targets to
                 identify backlogs early.
@@ -398,26 +401,26 @@ Tax declaration data</pre
             </article>
 
             <article
-              class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-5 sm:p-6 bg-white dark:bg-zinc-900 shadow-sm"
+              class="rounded-xl border border-[var(--zeus-border)] p-5 sm:p-6 bg-[var(--zeus-card-bg)] shadow-sm"
             >
               <div
-                class="h-16 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900/40 flex items-center justify-between px-3"
+                class="h-16 rounded-lg border border-[var(--zeus-border)] bg-[var(--zeus-bg-secondary)] flex items-center justify-between px-3"
               >
                 <span
-                  class="h-6 w-6 rounded-full border border-zinc-400"
+                  class="h-6 w-6 rounded-full border border-zeus-electric"
                 ></span>
                 <span
-                  class="h-6 w-6 rounded-full border border-zinc-400"
+                  class="h-6 w-6 rounded-full border border-zeus-electric"
                 ></span>
                 <span
-                  class="h-6 w-6 rounded-full border border-zinc-400"
+                  class="h-6 w-6 rounded-full border border-zeus-electric"
                 ></span>
               </div>
               <h3 class="text-lg font-semibold mt-4">
                 File Viewer Coverage per Barangay
               </h3>
               <p
-                class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 leading-relaxed"
+                class="text-[var(--zeus-text-secondary)] text-sm sm:text-base mt-2 leading-relaxed"
               >
                 Tracks document-viewer matching coverage by barangay to support
                 verification completeness.
@@ -425,7 +428,7 @@ Tax declaration data</pre
             </article>
           </div>
           <p
-            class="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg leading-relaxed max-w-3xl"
+            class="text-[var(--zeus-text-secondary)] text-base sm:text-lg leading-relaxed max-w-3xl"
           >
             Dashboard modules surface volume trends, workflow health, and export
             status to support day-to-day execution and management planning.
@@ -443,11 +446,11 @@ Tax declaration data</pre
             <article
               v-for="module in modules"
               :key="module.name"
-              class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-5 sm:p-6 bg-white dark:bg-zinc-900 shadow-sm"
+              class="rounded-xl border border-[var(--zeus-border)] p-5 sm:p-6 bg-[var(--zeus-card-bg)] shadow-sm"
             >
               <h3 class="text-lg font-semibold">{{ module.name }}</h3>
               <p
-                class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base mt-2 leading-relaxed"
+                class="text-[var(--zeus-text-secondary)] text-sm sm:text-base mt-2 leading-relaxed"
               >
                 {{ module.description }}
               </p>
@@ -466,14 +469,14 @@ Tax declaration data</pre
             <article
               v-for="(items, category) in techStack"
               :key="category"
-              class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-5 sm:p-6 bg-white dark:bg-zinc-900 shadow-sm"
+              class="rounded-xl border border-[var(--zeus-border)] p-5 sm:p-6 bg-[var(--zeus-card-bg)] shadow-sm"
             >
               <h3 class="font-semibold text-lg">{{ category }}</h3>
               <div class="flex flex-wrap gap-2 sm:gap-3 mt-4">
                 <span
                   v-for="item in items"
                   :key="item"
-                  class="px-3 py-1.5 text-xs sm:text-sm rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400"
+                  class="px-3 py-1.5 text-xs sm:text-sm rounded-full border border-[var(--zeus-tag-border)] text-[var(--zeus-tag-text)] bg-[var(--zeus-tag-bg)]"
                 >
                   {{ item }}
                 </span>
@@ -490,7 +493,7 @@ Tax declaration data</pre
             Engineering Challenges
           </h2>
           <ul
-            class="space-y-3 text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl list-disc list-inside"
+            class="space-y-3 text-[var(--zeus-text-secondary)] leading-relaxed max-w-3xl list-disc list-inside"
           >
             <li v-for="challenge in engineeringChallenges" :key="challenge">
               {{ challenge }}
@@ -503,7 +506,7 @@ Tax declaration data</pre
             Impact
           </h2>
           <ul
-            class="space-y-3 text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-3xl list-disc list-inside"
+            class="space-y-3 text-[var(--zeus-text-secondary)] leading-relaxed max-w-3xl list-disc list-inside"
           >
             <li v-for="item in impactPoints" :key="item">{{ item }}</li>
           </ul>
