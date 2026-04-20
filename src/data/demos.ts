@@ -50,6 +50,16 @@ export const demos: Demo[] = [
     isVibe: true,
   },
   {
+    slug: "asbad-booking-system",
+    title: "ASBAD Booking System",
+    description:
+      "A live booking system demo built to showcase real-time system design and development workflow.",
+    tags: ["Vue 3", "Supabase", "Booking System"],
+    demoUrl: "https://asbad.booking.kingzeusbiong.dev/",
+    image: `https://image.thum.io/get/width/800/https://asbad.booking.kingzeusbiong.dev/`,
+    isVibe: true,
+  },
+  {
     slug: "portfolio",
     title: "Portfolio Website",
     description:
